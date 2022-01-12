@@ -1,48 +1,116 @@
 import React, { Component } from "react";
-import { Button, StyleSheet, View, Image,Text, } from "react-native";
+import {
+  Button,
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 
 export default class ButtonBasics extends Component {
-  _onPressButton() {
-    alert("You tapped the button!");
-  }
+ 
 
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.buttonContainer}>
+        
           <Image
             style={styles.logo1}
             source={require("../assets/scroll.png")}
           />
-        </View>
-        <View style={styles.buttonContainer}>
-          {/* <Image
-            style={styles.logo}
-            source={require("../assets/lostpet.jpg")}
-          /> */}
-          <Button
-            onPress={this._onPressButton}
-            title="I'm looking for my pet"
-            color="#841584"
-          />
-          <Text style={styles.text}>I'M LOOKING FOR MY PET</Text>
-        </View>
-        <View style={styles.buttonContainer}>
-          {/* <Image
-            style={styles.logo1}
-            source={require("../assets/breeder_img04.jpg")}
-          /> */}
-          <Button onPress={this._onPressButton} title="I found a lost pet" />
-          <Text style={styles.text}>I FOUND A LOST PET</Text>
-        </View>
-        <View style={styles.buttonContainer}>
-          {/* <Image
-            style={styles.logo1}
-            source={require("../assets/breeder_img04.jpg")}
-          /> */}
-          <Button onPress={this._onPressButton} title="I found a lost pet" />
-          <Text style={styles.text}>All LOST PETS POSTS </Text>
-        </View>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "#fff",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                width: 130,
+                borderRadius: 4,
+                backgroundColor: "#FAAA08",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                height: 40,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+                I'M LOOKING FOR MY PET
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "#fff",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                width: 130,
+                borderRadius: 4,
+                backgroundColor: "#FAAA08",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                height: 40,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+                I'FOUND A LOST PET
+              </Text>
+            </TouchableOpacity>
+          </View>
+     
+       
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "#fff",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                width: 130,
+                borderRadius: 4,
+                backgroundColor: "#FAAA08",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                height: 40,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+               ALL LOST PETS
+              </Text>
+            </TouchableOpacity>
+          </View>
       </View>
     );
   }

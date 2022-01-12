@@ -1,15 +1,15 @@
 import { Camera } from 'expo-camera';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-// import  Cameracomp  from './Components/Cameracomp';
+import  Cameracomp  from './Components/Cameracomp';
 //import  HomePage  from './Components/HomePage';
-import FoundPet from './Components/FoundPet'
+// import FoundPet from './Components/FoundPet'
 export default function App() {
   return (
     <View style={styles.container}>
-       <FoundPet/>
+       {/* <FoundPet/> */}
       {/* <HomePage/> */}
-      {/* <Cameracomp/> */}
+      <Cameracomp/>
       <StatusBar style="auto" />
     </View>
   );
