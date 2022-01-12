@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { StyleSheet,View,Text, SafeAreaView , Image, } from 'react-native';
+import { StyleSheet,View,Text, SafeAreaView , Image } from 'react-native';
 import { Card } from 'react-native-paper';
 export default class GEtItems extends React.Component {
   constructor(props) {
@@ -31,12 +31,12 @@ export default class GEtItems extends React.Component {
   <SafeAreaView style={styles.container}>
   {this.state.items.map((item,index)=>{
     return(
-      <View style={styles.container}>
-        <Card key = {index} >
-     <Text>Animal Description : {item.AnimalDescription} </Text>
-     <Text>Animal Image : {item.AnimalImage}</Text>
-     <Text>Animal Localisation : {item.AnimalLocalisation}</Text>
-    <Text> Animal Name : {item.AnimalName}</Text>
+      <View style={styles.container} key = {index}>
+        <Card key = {index}  >
+    <Text>Animal Image : {item.AnimalImage}</Text>
+    <Text>Animal Name : {item.AnimalName}</Text>
+    <Text>Animal Description : {item.AnimalDescription} </Text>
+    <Text>Animal Localisation : {item.AnimalLocalisation}</Text>
     
     </Card>
     </View>
