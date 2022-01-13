@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {link} f
+import {link} from "react-router-dom"
 import {
   Button,
   StyleSheet,
