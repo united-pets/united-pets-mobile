@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {link} f
 import {
   Button,
   StyleSheet,
@@ -29,13 +30,13 @@ export default class ButtonBasics extends Component {
           >
             <TouchableOpacity
               style={{
-                width: 130,
-                borderRadius: 4,
+                width: 250,
+                borderRadius: 20,
                 backgroundColor: "#FAAA08",
                 flexDirection: "row",
                 justifyContent: "center",
                 alignItems: "center",
-                height: 40,
+                height: 60,
               }}
             >
               <Text
@@ -59,13 +60,13 @@ export default class ButtonBasics extends Component {
           >
             <TouchableOpacity
               style={{
-                width: 130,
-                borderRadius: 4,
+                width: 250,
+                borderRadius: 20,
                 backgroundColor: "#FAAA08",
                 flexDirection: "row",
                 justifyContent: "center",
                 alignItems: "center",
-                height: 40,
+                height: 60,
               }}
             >
               <Text
@@ -91,13 +92,13 @@ export default class ButtonBasics extends Component {
           >
             <TouchableOpacity
               style={{
-                width: 130,
-                borderRadius: 4,
+                width: 250,
+                borderRadius: 20,
                 backgroundColor: "#FAAA08",
                 flexDirection: "row",
                 justifyContent: "center",
                 alignItems: "center",
-                height: 40,
+                height: 60,
               }}
             >
               <Text

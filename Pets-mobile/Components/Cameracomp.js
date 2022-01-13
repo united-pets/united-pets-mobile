@@ -25,7 +25,15 @@ export default function App() {
       <Camera style={styles.camera} type={type}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            style={styles.button}
+            style={{
+              width: 130,
+              borderRadius: 4,
+              backgroundColor: "#FAAA08",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              height: 40,
+            }}
             onPress={() => {
               setType(
                 type === Camera.Constants.Type.back
@@ -45,9 +53,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
   },
   camera: {
     flex: 1,
+    justifyContent:'flex-end'
   },
   buttonContainer: {
     flex: 1,
