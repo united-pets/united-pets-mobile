@@ -12,4 +12,20 @@ export default class GEtItems extends React.Component {
       };
       this.componentDidMount = this.componentDidMount.bind(this)
     }
+
+    componentDidMount() {
+        axios.get('http://localhost:3000/getAll')
+        .then(({data})=>{
+            console.log("hhhhhhhyu",data)
+            this.setState({
+              items: data
+            });
+            console.log('aaaaaaaaaa',this.state.items);
+            
+        })
+        .catch(err => 
+          console.log(err)
+        )
+      };
+
 }
