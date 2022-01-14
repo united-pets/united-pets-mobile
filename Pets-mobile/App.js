@@ -6,7 +6,7 @@ export default function App() {
     <View style={styles.container}>
       
       
-      {/* <GEtItems/> */}
+      <GEtItems/>
 
     </View>
   );
