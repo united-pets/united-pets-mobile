@@ -32,7 +32,7 @@ export default class GEtItems extends React.Component {
     return(
      <View style={styles.paragraph} key = {index}>
      <Card style={styles.card} key = {index} >
-     <Image  style={{height: 300, width: 400 ,}}  source = {item.AnimalImage}/>
+     <Image  style={styles.Image}  source = {item.AnimalImage}/>
      <Text>Animal Name : {item.AnimalName}</Text>
      <Text>Animal Description : {item.AnimalDescription} </Text>
      <Text>Animal Localisation : {item.AnimalLocalisation}</Text>
@@ -61,7 +61,21 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     backgroundColor: '#fca500',
+    
     height:300,
-    width:400
+    width:400,
+    borderRadius: 40,
+    shadowOpacity: 2,
+    shadowRadius: 10,
+    elevation: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  Image :{
+    height: 300,
+     width: 400 , 
+     borderRadius: 40,
+    elevation: 10,
+
   }
 });
