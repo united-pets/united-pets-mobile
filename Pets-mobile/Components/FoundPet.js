@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {link} from "react-router-dom"
+// import {link} from "react-router-dom"
 import {
   Button,
   StyleSheet,
@@ -15,103 +15,99 @@ export default class ButtonBasics extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image style={styles.logo1} source={require("../assets/scroll.png")} />
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: "#fff",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              width: 250,
+              borderRadius: 20,
+              backgroundColor: "#fca500",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              height: 60,
+            }}
+          >
+            <Text
+              style={{
+                color: "#fff",
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
+              I'M LOOKING FOR MY PET
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: "#fff",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              width: 250,
+              borderRadius: 20,
+              backgroundColor: "#fca500",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              height: 60,
+            }}
+          >
+            <Text
+              style={{
+                color: "#fff",
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
+              I'FOUND A LOST PET
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: "#fff",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              width: 250,
+              borderRadius: 20,
+              backgroundColor: "#fca500",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              height: 60,
+            }}
+          >
+            <Text
+              style={{
+                color: "#fff",
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
+              ALL LOST PETS
+            </Text>
+          </TouchableOpacity>
+        </View>
         
-          <Image
-            style={styles.logo1}
-            source={require("../assets/scroll.png")}
-          />
-          <View
-            style={{
-              flex: 1,
-              backgroundColor: "#fff",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <TouchableOpacity
-              style={{
-                width: 250,
-                borderRadius: 20,
-                backgroundColor: "#FAAA08",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 60,
-              }}
-            >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                }}
-              >
-                I'M LOOKING FOR MY PET
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              flex: 1,
-              backgroundColor: "#fff",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <TouchableOpacity
-              style={{
-                width: 250,
-                borderRadius: 20,
-                backgroundColor: "#FAAA08",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 60,
-              }}
-            >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                }}
-              >
-                I'FOUND A LOST PET
-              </Text>
-            </TouchableOpacity>
-          </View>
-     
-       
-          <View
-            style={{
-              flex: 1,
-              backgroundColor: "#fff",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <TouchableOpacity
-              style={{
-                width: 250,
-                borderRadius: 20,
-                backgroundColor: "#FAAA08",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 60,
-              }}
-            >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                }}
-              >
-               ALL LOST PETS
-              </Text>
-            </TouchableOpacity>
-          </View>
       </View>
     );
   }
@@ -121,6 +117,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    marginBottom: 30,
+    marginTop:50
   },
   buttonContainer: {
     margin: 8,

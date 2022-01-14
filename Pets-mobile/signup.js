@@ -4,7 +4,8 @@ import {
   View,
   Button,
   TextInput,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native'
 
 export default class SignUp extends React.Component {
@@ -66,80 +67,87 @@ export default class SignUp extends React.Component {
       <View style={styles.container}>
         <TextInput
           style={styles.input}
-          placeholder='firstName'
+          placeholder="firstName"
           autoCapitalize="none"
-          placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('firstName', val)}
+          placeholderTextColor="white"
+          onChangeText={(val) => this.onChangeText("firstName", val)}
         />
         <TextInput
           style={styles.input}
-          placeholder='lastName'
+          placeholder="lastName"
           autoCapitalize="none"
-          placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('lastName', val)}
+          placeholderTextColor="white"
+          onChangeText={(val) => this.onChangeText("lastName", val)}
         />
         <TextInput
           style={styles.input}
-          placeholder='email'
+          placeholder="email"
           autoCapitalize="none"
-          placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('email', val)}
-          
+          placeholderTextColor="white"
+          onChangeText={(val) => this.onChangeText("email", val)}
         />
         <TextInput
-        style={styles.input}
-        placeholder='Password'
-        secureTextEntry={true}
-        autoCapitalize="none"
-        placeholderTextColor='white'
-        onChangeText={val => this.onChangeText('password', val)}
-        />
-         <TextInput
           style={styles.input}
-          placeholder='phoneNumber'
+          placeholder="Password"
+          secureTextEntry={true}
           autoCapitalize="none"
-          placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('phoneNumber', val)}
+          placeholderTextColor="white"
+          onChangeText={(val) => this.onChangeText("password", val)}
         />
-         <TextInput
+        <TextInput
           style={styles.input}
-          placeholder='adress'
+          placeholder="phoneNumber"
           autoCapitalize="none"
-          placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('adress', val)}
+          placeholderTextColor="white"
+          onChangeText={(val) => this.onChangeText("phoneNumber", val)}
         />
-         <TextInput
+        <TextInput
           style={styles.input}
-          placeholder='imageUrl'
+          placeholder="adress"
           autoCapitalize="none"
-          placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('imageUrl', val)}
+          placeholderTextColor="white"
+          onChangeText={(val) => this.onChangeText("adress", val)}
         />
-
-        <Button
-          title='Sign Up'
-          onPress={this.SignUp}
+        <TextInput
+          style={styles.input}
+          placeholder="imageUrl"
+          autoCapitalize="none"
+          placeholderTextColor="white"
+          onChangeText={(val) => this.onChangeText("imageUrl", val)}
         />
+        <TouchableOpacity style={styles.loginBtn}>
+          <Button title="Sign Up" onPress={this.SignUp} />
+        </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
-    input: {
-    width: 350,
+  input: {
+    width: 300,
     height: 55,
-    backgroundColor: '#42A5F5',
+    backgroundColor: "#fca500",
     margin: 10,
     padding: 8,
-    color: 'white',
-    borderRadius: 14,
+    color: "white",
+    borderRadius: 25,
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: "500",
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  loginBtn: {
+    width: "60%",
+    backgroundColor: "#275C76",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    marginBottom: 10,
+  },
+});

@@ -44,12 +44,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    color: "red",
+    color: "#fca500",
     fontSize: 42,
     lineHeight: 84,
     fontWeight: "bold",
     textAlign: "center",
-      //backgroundColor: "red",
+    //backgroundColor: "red",
     //borderRadius:30,
   },
 });
