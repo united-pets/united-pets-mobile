@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { StyleSheet,View,Text, SafeAreaView , Image } from 'react-native';
+import { StyleSheet,View,Text, SafeAreaView , Image,TextInput  } from 'react-native';
 import { Card } from 'react-native-paper';
+// import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
 export default class GEtItems extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +18,8 @@ export default class GEtItems extends React.Component {
         this.setState({items: data})
         console.log('aaaaaaaaaa',this.state.items);
         
-    })}
+    }).catch(err => console.log(err))
+  }
    
   
 
@@ -28,18 +30,26 @@ export default class GEtItems extends React.Component {
     
   <View style={styles.container}>
   {/* <Text>Hello, alla</Text> */}
+    
   <SafeAreaView style={styles.container}>
   {this.state.items.map((item,index)=>{
+    console.log(item);
     return(
-      <View style={styles.container} key = {index}>
-        <Card key = {index}  >
-    <Text>Animal Image : {item.AnimalImage}</Text>
+      <View style={styles.paragraph} key = {index}>
+        <Card style={styles.card} key = {index} >
+    <Image  style={{height: 300, width: 400 ,}}  source = {item.AnimalImage}/>
     <Text>Animal Name : {item.AnimalName}</Text>
-    <Text>Animal Description : {item.AnimalDescription} </Text>
+    <Text >Animal Description : {item.AnimalDescription} </Text>
     <Text>Animal Localisation : {item.AnimalLocalisation}</Text>
-    
+    {/* <TextInput
+        style={{height: 40}}
+        placeholder="Type here to translate!"
+        // onChangeText={text => setText(text)}
+        // defaultValue={text}
+      /> */}
     </Card>
-    </View>
+     </View>
+     
   )})}
     </SafeAreaView>
   </View>
@@ -48,15 +58,24 @@ export default class GEtItems extends React.Component {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#ecf0f1',
+    padding: 25,
+    // width : 750,
+    backgroundColor: '#275c76',
   },
   paragraph: {
-    fontSize: 18,
+    fontSize: 150,
     fontWeight: 'bold',
     textAlign: 'center',
-    padding: 20
+    padding: 25
   },
+  card:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor: '#fca500',
+    height:300,
+    width:400
+  }
 });
