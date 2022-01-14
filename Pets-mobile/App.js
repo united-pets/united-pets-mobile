@@ -4,6 +4,7 @@ import Cameracomp from './Components/Cameracomp';
 import { NavigationContainer } from "@react-navigation/native";
 // import { ReactDOM } from 'react-dom';
 // import { BrowserRouter, Route, Switch } from "react-router-dom";
+import GetIteml from './GetIteml'
 import Login from './login';
 import SignUp from './signup';
 import  HomePage  from './Components/HomePage';
@@ -14,7 +15,7 @@ export default function App() {
       <View style={styles.container}>
         <FoundPet />
         {/* <HomePage/> */}
-
+        <GetIteml/>
         {/* <Cameracomp /> */}
         {/* <SignUp /> */}
         {/* <Login /> */}
