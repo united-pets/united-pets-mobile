@@ -41,12 +41,7 @@ export default class GEtItems extends React.Component {
     <Text>Animal Name : {item.AnimalName}</Text>
     <Text >Animal Description : {item.AnimalDescription} </Text>
     <Text>Animal Localisation : {item.AnimalLocalisation}</Text>
-    <TextInput
-        style={{height: 40}}
-        placeholder="Type here to translate!"
-        // onChangeText={text => setText(text)}
-        // defaultValue={text}
-      />
+    
     </Card>
      </View>
      
@@ -70,12 +65,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 25
   },
-  card:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor: '#fca500',
-    height:300,
-    width:400
-  }
+  // card:{
+  //   flex:1,
+  //   justifyContent:'center',
+  //   alignItems:'center',
+  //   backgroundColor: '#fca500',
+  //   height:300,
+  //   width:400
+  // }
 });
