@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
@@ -8,7 +7,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import GetIteml from './Components/GetIteml'
 import Login from './Components/login';
 import SignUp from './Components/signup';
-import FoundPet from './Components/FoundPet'
+import FoundPet from './Components/FoundPet';
+import Map from './Components/Map';
 
 
 
@@ -17,12 +17,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        <FoundPet />
+        {/* <FoundPet /> */}
         {/* <HomePage/> */}
-        <GetIteml/>
+        {/* <GetIteml/> */}
         {/* <Cameracomp /> */}
         {/* <SignUp /> */}
         {/* <Login /> */}
+        <Map/>
         <StatusBar style="auto" />
       </View>
     </NavigationContainer>

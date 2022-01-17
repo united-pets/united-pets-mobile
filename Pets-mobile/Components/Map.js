@@ -1,14 +1,14 @@
-import * as React from 'react';
-import MapView, {PROVIDER_GOOGLE } from 'react-native-maps';
+import  React, { useEffect } from 'react';
+import MapView, {PROVIDER_GOOGLE, Circle}  from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import useLocation from './useLocation';
 
 
 export default function Map() {
   const location = useLocation();
-  
   return (
     <View style={styles.container}>
+      
        <MapView style={styles.map}
          initialRegion={{
            latitude: location?.latitude,
