@@ -1,27 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
-import Cameracomp from './Components/Cameracomp';
-import { NavigationContainer } from "@react-navigation/native";
+// import Cameracomp from './Components/Cameracomp';
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // import { ReactDOM } from 'react-dom';
 // import { BrowserRouter, Route, Switch } from "react-router-dom";
-import GetIteml from './GetIteml'
-import Login from './login';
-import SignUp from './signup';
+// import GetIteml from './Components/GetIteml'
+import Login from './Components/Login';
+import SignUp from "./Components/signup";
 import  HomePage  from './Components/HomePage';
-import FoundPet from './Components/FoundPet'
+import FoundPet from './Components/FoundPet';
+import Posts from './Components/Posts'
+// import Cam from './Components/Cam';
+import { render } from 'react-dom';
+// const Stack = createNativeStackNavigator();
+
+// function MyStack() {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen name="foundPet" component={foundPet} />
+//     </Stack.Navigator>
+//   );
+// }
 export default function App() {
   return (
-    <NavigationContainer>
+    // <NavigationContainer>
       <View style={styles.container}>
-        <FoundPet />
+        {/* <FoundPet /> */}
         {/* <HomePage/> */}
-        <GetIteml/>
+        {/* <GetIteml/> */}
         {/* <Cameracomp /> */}
-        {/* <SignUp /> */}
-        {/* <Login /> */}
+      {/* <SignUp /> */}
+      <Posts/>
+      {/* <Login /> */}
+      {/* <Cam/> */}
         <StatusBar style="auto" />
       </View>
-    </NavigationContainer>
+    // </NavigationContainer>
+    
+    // <NavigationContainer>
+    //   <MyStack />
+    // </NavigationContainer>
+  
   );
 }
 
