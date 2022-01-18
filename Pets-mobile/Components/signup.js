@@ -33,29 +33,6 @@ export default class SignUp extends React.Component {
       console.log('error signing up: ', err)
     }
   }
-// SingUp=() => {
-//     // alert("email: " + email + " password: " + pass);}
-//     // console.log(firstName, lastName, email, phoneNumber , password ,adress , imageUrl)
-//     console.log(this.state);
-//    axios
-//       .post("http://localhost:3000/signup", {
-//         firstName : this.firstName,
-//         lastName:this.lastName,
-//         email:this.email,
-//         phoneNumber:this.phoneNumber,
-//         password:this.password ,
-//         adress:this.adress,
-//         imageUrl:this.imageUrl
-
-//       })
-    //   .then((response) => {
-    //     console.log("success", response);
-    //   })
-//       .catch((err) => {
-//         throw err;
-//       });
-//   };
-
 
  
   render() {

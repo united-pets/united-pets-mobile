@@ -22,11 +22,19 @@ export default useLocation = () => {
   }, []);
   
   handleSendLocation = async () => {
-    const latitude , longitude
+    const POINT = {
+      location : location
+    }
     try{ 
       const res = await axios
-    .post("http://192.168.11.73/useLocation")}
+    .post("http://192.168.11.73/useLocation",POINT)
+    console.log('location send :', location)
   }
+    catch (err) {
+    console.log('error sending location: ', err)
+  }
+}
+  
   return location;
 
 
