@@ -57,7 +57,7 @@ export default function Posts() {
                 />
                 <Card.Cover source={{ uri: item.AnimalImage }} />
                 <Card.Content>
-                  <Title>{item.AnimalName}</Title>
+                  <Title>Last seen {item.AnimalLocalisation}</Title>
                   <Paragraph>{item.AnimalDescription}</Paragraph>
                 </Card.Content>
               </Card>
@@ -75,11 +75,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop:100
+        marginTop: 100,
+    marginBottom:150
   },
   mycard: {
     flexDirection: "row",
-    marginTop: 30,
+      marginTop: 30,
+      marginRight: 25,
+    marginLeft:30,
   },
   text: {
     color: "#fca500",
