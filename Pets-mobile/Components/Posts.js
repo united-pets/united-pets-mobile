@@ -57,7 +57,7 @@ export default function Posts() {
                 />
                 <Card.Cover source={{ uri: item.AnimalImage }} />
                 <Card.Content>
-                  <Title>Last seen {item.AnimalLocalisation}</Title>
+                  <Title>Last seen in {item.AnimalLocalisation}</Title>
                   <Paragraph>{item.AnimalDescription}</Paragraph>
                 </Card.Content>
               </Card>

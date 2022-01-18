@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
-// import Cameracomp from './Components/Cameracomp';
+import Cameracomp from './Components/Cameracomp';
 // import { NavigationContainer } from "@react-navigation/native";
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // import { ReactDOM } from 'react-dom';
@@ -11,7 +11,7 @@ import SignUp from "./Components/signup";
 import  HomePage  from './Components/HomePage';
 import FoundPet from './Components/FoundPet';
 import Posts from './Components/Posts'
-// import Cam from './Components/Cam';
+
 import { render } from 'react-dom';
 // const Stack = createNativeStackNavigator();
 
@@ -29,9 +29,9 @@ export default function App() {
         {/* <FoundPet /> */}
         {/* <HomePage/> */}
         {/* <GetIteml/> */}
-        {/* <Cameracomp /> */}
+        <Cameracomp />
       {/* <SignUp /> */}
-      <Posts/>
+      {/* <Posts/> */}
       {/* <Login /> */}
       {/* <Cam/> */}
         <StatusBar style="auto" />
