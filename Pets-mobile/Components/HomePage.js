@@ -4,6 +4,7 @@ import { ImageBackground,Text, View, StyleSheet, Image } from "react-native";
 const image1 = {
   uri: "https://w7.pngwing.com/pngs/885/839/png-transparent-paw-prints-paw-dog-footprint-printing-cat-dog-animals-pet-monochrome.png",
 };
+
 export default function AssetExample() {
   return (
     <View style={styles.container}>
@@ -14,9 +15,12 @@ export default function AssetExample() {
         source={require("../assets/breeder_img04.jpg")}
       />
       <Text style={styles.text}>Welcome</Text>
+      {/* <Button
+        title="STart Now"
+        onPress={() => navigation.navigate("foundPet")}
+      /> */}
     </View>
   );
-    
 }
 
 const styles = StyleSheet.create({
