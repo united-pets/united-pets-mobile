@@ -11,6 +11,7 @@ import SignUp from "./Components/signup";
 import  HomePage  from './Components/HomePage';
 import FoundPet from './Components/FoundPet';
 import Posts from './Components/Posts'
+import Gallery from './Components/Gallery';
 
 import { render } from 'react-dom';
 // const Stack = createNativeStackNavigator();
@@ -25,23 +26,23 @@ import { render } from 'react-dom';
 export default function App() {
   return (
     // <NavigationContainer>
-      <View style={styles.container}>
-        {/* <FoundPet /> */}
-        {/* <HomePage/> */}
-        {/* <GetIteml/> */}
-        <Cameracomp />
+    <View style={styles.container}>
+      {/* <FoundPet /> */}
+      {/* <HomePage/> */}
+      {/* <GetIteml/> */}
+      {/* <Cameracomp /> */}
+      <Gallery/>
       {/* <SignUp /> */}
       {/* <Posts/> */}
       {/* <Login /> */}
       {/* <Cam/> */}
-        <StatusBar style="auto" />
-      </View>
+      <StatusBar style="auto" />
+    </View>
     // </NavigationContainer>
-    
+
     // <NavigationContainer>
     //   <MyStack />
     // </NavigationContainer>
-  
   );
 }
 
