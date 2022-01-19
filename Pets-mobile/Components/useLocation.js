@@ -4,7 +4,6 @@ import axios from 'axios'
 
 export default useLocation = () => {
   const [location, setLocation] = useState();
- console.log(location)
   const getLocation = async () => {
     try {
       const { granted } = await Location.requestForegroundPermissionsAsync();
@@ -19,25 +18,22 @@ export default useLocation = () => {
   };
   useEffect(() => {
     getLocation();
+    // handleSendLocation();
+    
   }, []);
   
   handleSendLocation = async () => {
-    const POINT = {
-      location : location
-    }
+
     try{ 
       const res = await axios
-    .post("http://192.168.11.73/useLocation",POINT)
-    console.log('location send :', location)
+    .post("http://192.168.11.73:3000/useLocation", {
+      latitude : location.latitude,
+      longitude : location.longitude
+    })
+    console.log(res.data);
+  }catch (err) {
+    console.log('error send location: ', err)
+   }
   }
-    catch (err) {
-    console.log('error sending location: ', err)
-  }
-}
-  
   return location;
-
-
 };
-
-
