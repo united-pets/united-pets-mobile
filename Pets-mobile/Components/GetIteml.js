@@ -16,11 +16,9 @@ export default class GEtItems extends React.Component {
     componentDidMount() {
         axios.get('http://192.168.1.9:3000/getAll')
         .then(({data})=>{
-            console.log("hhhhhhhyu",data)
             this.setState({
               items: data
             });
-            console.log('aaaaaaaaaa',this.state.items);
             
         })
         .catch(err => 

@@ -1,11 +1,8 @@
-import React , { useState } from 'react';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
 import Cameracomp from './Components/Cameracomp';
-import { NavigationContainer } from "@react-navigation/native";
-import AppLoading from 'expo-app-loading';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-// import { CredentialsContext } from './components/Authentification/CredentialsContext.js';
+// import { NavigationContainer } from "@react-navigation/native";
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // import { ReactDOM } from 'react-dom';
 // import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -16,7 +13,8 @@ import  HomePage  from './Components/HomePage';
 import FoundPet from './Components/FoundPet';
 import Posts from './Components/Posts'
 import Gallery from './Components/Gallery';
-import Navigation from "./route/navigation"
+import LostPetForm from './Components/LostPetForm';
+
 import { render } from 'react-dom';
 // const Stack = createNativeStackNavigator();
 
@@ -28,39 +26,27 @@ import { render } from 'react-dom';
 //   );
 // }
 export default function App() {
-  const [appReady, setAppReady]= useState(false);
-const [storedCredentials, setStoredCredentials]= useState("")
-const checkLoginCredentials = ()=>{
-  AsyncStorage
-   .getItem('domicareCredentials')
-   .then((result)=>{
-     if(result !== null){
-       setStoredCredentials(JSON.parse(result));
-     } else {
-       setStoredCredentials(null);
-     }
-   })
-   .catch(err => console.log(err));
-}
-// if(!appReady){
-//   return (
-//     <AppLoading
-//     startAsync={checkLoginCredentials}
-//     onFinish={()=> setAppReady(true)}
-//     onError={console.warn}
-//     />
-
-//   )
-// }
   return (
-    <NavigationContainer>
-          <Navigation />
-          {/* <Gallery/> */}
-       {/* <Cameracomp/> */}
-{/* <Posts /> */}
-          {/* <MyTabs /> */}
-        </NavigationContainer>
-        );
+    // <NavigationContainer>
+    <View style={styles.container}>
+      {/* <FoundPet /> */}
+      {/* <HomePage/> */}
+      {/* <GetIteml/> */}
+      {/* <Cameracomp /> */}
+      {/* <Gallery/> */}
+      {/* <SignUp /> */}
+      {/* <Posts/> */}
+      {/* <Login /> */}
+      {/* <Cam/> */}
+      <LostPetForm/>
+      <StatusBar style="auto" />
+    </View>
+    // </NavigationContainer>
+
+    // <NavigationContainer>
+    //   <MyStack />
+    // </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -68,7 +54,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: '#fff',
     // alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     
   },
       
