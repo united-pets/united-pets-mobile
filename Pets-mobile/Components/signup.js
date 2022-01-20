@@ -16,19 +16,15 @@ export default class SignUp extends React.Component {
     const { firstName, lastName, email, phoneNumber , password ,adress , imageUrl } = this.state
     
     try {
-
-        const res = await axios
-        .post("http://localhost:3000/signup", {
-          firstName : firstName,
-          lastName:lastName,
-          email:email,
-          phoneNumber:phoneNumber,
-          password:password ,
-          adress:adress,
-          imageUrl:imageUrl
-        })
-    //   // here place your signup logic
-    //   console.log('user successfully signed up!: ')
+        const res = await axios.post("http://192.168.11.10:3000/signup", {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phoneNumber: phoneNumber,
+          password: password,
+          adress: adress,
+          imageUrl: imageUrl,
+        });
     } catch (err) {
       console.log('error signing up: ', err)
     }

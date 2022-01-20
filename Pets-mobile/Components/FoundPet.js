@@ -107,7 +107,6 @@ export default class ButtonBasics extends Component {
             </Text>
           </TouchableOpacity>
         </View>
-        
       </View>
     );
   }
