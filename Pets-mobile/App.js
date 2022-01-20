@@ -1,3 +1,4 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
 import Cameracomp from './Components/Cameracomp';
@@ -15,6 +16,7 @@ import Gallery from './Components/Gallery';
 import PetService from './Components/PetService';
 import PetsSetting from './Components/PetsSetting';
 import Grooming from './Components/Grooming'
+import LostPetForm from './Components/LostPetForm';
 
 import { render } from 'react-dom';
 // const Stack = createNativeStackNavigator();
@@ -42,6 +44,7 @@ export default function App() {
       {/* <Cam/> */}
       {/* <Grooming/> */}
       {/* <PetsSetting/> */}
+      <LostPetForm/>
       <StatusBar style="auto" />
     </View>
     // </NavigationContainer>
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: '#fff',
     // alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     
   },
       

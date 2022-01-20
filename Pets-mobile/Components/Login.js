@@ -1,62 +1,85 @@
-import React from 'react';
-import { Button ,StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
-import axios from 'axios';
-export default class Login extends React.Component {
-  state={
-    firstName:"",
-    password:""
-  }
-  onChangeText = (key, val) => {
-    this.setState({ [key]: val })
-  }
-  Login = async () => {
-    const { firstName, password  } = this.state
-    
-    try {
+import React, { useState } from "react";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { CredentialsContext } from "./CredentialsContext.js";
+// import SyncStorage from 'sync-storage'
+// import AsyncStorage from 'react-native';r
+export default function Login({ navigation }) {
+  // const NavigateToFoundPet = ()=>{
+  //   navigation.navigate('buttomTab')
+  // }
+  const navigateTosignUp = () => {
+    navigation.navigate("signUp");
+  };
+  const [firstName, setFirstName] = useState("");
+  const [password, setPassword] = useState("");
+  const { storedCredentials, setStoredCredentials } =
+    React.useContext(CredentialsContext);
 
-        const res = await axios.post("http://192.168.1.208:3000/login", {
-          firstName: firstName,
-          password: password,
-        });
-    //   // here place your signup logic
-    //   console.log('user successfully signed up!: ')
-    } catch (err) {
-      console.log('error Logged in: ', err)
-    }
-  }
-  render(){
-    return (
-      <View style={styles.container}>
-        <Text style={styles.logo}>LOGIN</Text>
-        <View style={styles.inputView}>
-          <TextInput
-            style={styles.inputText}
-            placeholder="First Name..."
-            placeholderTextColor="#fff"
-            onChangeText={(text) => this.setState({ firstName: text })}
-          />
-        </View>
-        <View style={styles.inputView}>
-          <TextInput
-            secureTextEntry
-            style={styles.inputText}
-            placeholder="Password..."
-            placeholderTextColor="#fff"
-            onChangeText={(text) => this.setState({ password: text })}
-          />
-        </View>
-        <TouchableOpacity>
-          <Text style={styles.forgot}>Forgot Password?</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.loginBtn}>
-          <Button title="Login" onPress={this.Login} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.loginText}>Signup</Text>
-        </TouchableOpacity>
+  const persistLogin = (credentials) => {
+    AsyncStorage.setItem("domicareCredentials", JSON.stringify(credentials))
+      .then(() => {
+        setStoredCredentials(credentials);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const login = () => {
+    let data = { firstName, password };
+    axios
+      .post("http://192.168.11.10:3000/login", data)
+      .then((res) => {
+        console.log(res);
+        const data = res.data;
+        persistLogin({ userData: data });
+        if (localStorage.length !== 0) {
+          navigation.navigate("buttomTab");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo}>LOGIN</Text>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.inputText}
+          placeholder="First Name..."
+          placeholderTextColor="#fff"
+          onChangeText={(text) => setFirstName({ firstName: text })}
+        />
       </View>
-    );
-  }
+      <View style={styles.inputView}>
+        <TextInput
+          secureTextEntry
+          style={styles.inputText}
+          placeholder="Password..."
+          placeholderTextColor="#fff"
+          onChangeText={(text) => setPassword({ password: text })}
+        />
+      </View>
+      <TouchableOpacity>
+        <Text style={styles.forgot}>Forgot Password?</Text>
+      </TouchableOpacity>
+      {/* <TouchableOpacity style={styles.loginBtn}>< */}
+      <Button title="Login" onPress={() => login()} />
+      {/* onPress={this.login} */}
+      {/* </TouchableOpacity> */}
+      <Text onPress={navigateTosignUp}>or sign in </Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

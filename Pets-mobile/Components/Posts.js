@@ -18,7 +18,7 @@ import ImagedCardView from "react-native-imaged-card-view";
 export default function Posts() {
   const [posts, setPosts] = useState([]);
   console.log(posts);
-  fetchPostsData = () => {
+  const fetchPostsData = () => {
     axios
       .get("http://192.168.11.201:3000/getAll")
       .then((response) => {
@@ -34,9 +34,7 @@ export default function Posts() {
       <Text style={styles.text}>Lost Pets</Text>
       <Button
         title="get data"
-        onPress={() => {
-          fetchPostsData();
-        }}
+        onPress={fetchPostsData}
       />
 
       <View>
