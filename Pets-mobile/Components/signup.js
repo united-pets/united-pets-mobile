@@ -1,10 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {
-  View,
-  Button,
-  TextInput,
-  StyleSheet,
+import { View,Button, TextInput,  StyleSheet,
   TouchableOpacity
 } from 'react-native'
 
@@ -33,7 +29,6 @@ export default class SignUp extends React.Component {
       console.log('error signing up: ', err)
     }
   }
-
 
  
   render() {
