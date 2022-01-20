@@ -40,7 +40,7 @@ export default function App() {
       {/* <PetService/> */}
       {/* <Login /> */}
       {/* <Cam/> */}
-      <Grooming/>
+      {/* <Grooming/> */}
       {/* <PetsSetting/> */}
       <StatusBar style="auto" />
     </View>
