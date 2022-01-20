@@ -1,31 +1,46 @@
-import React from 'react';
+import React , { useState } from 'react';
 import { Button ,StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import axios from 'axios';
-export default class Login extends React.Component {
-  state={
-    firstName:"",
-    password:""
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { CredentialsContext } from "./CredentialsContext.js";
+// import SyncStorage from 'sync-storage'
+// import AsyncStorage from 'react-native';r
+export default function Login ({navigation}) {
+// const NavigateToFoundPet = ()=>{
+//   navigation.navigate('buttomTab')
+// }
+  const navigateTosignUp = ()=> {
+    navigation.navigate('signUp')
   }
-  onChangeText = (key, val) => {
-    this.setState({ [key]: val })
-  }
-  Login = async () => {
-    const { firstName, password  } = this.state
-    
-    try {
+  const [firstName,setFirstName]=useState('')
+  const [password,setPassword]=useState('')
+  const { storedCredentials, setStoredCredentials } =
+  React.useContext(CredentialsContext);
 
-        const res = await axios
-        .post("http://localhost:3000/login", {
-          firstName : firstName,
-          password:password
-        })
-    //   // here place your signup logic
-    //   console.log('user successfully signed up!: ')
-    } catch (err) {
-      console.log('error Logged in: ', err)
-    }
+
+const persistLogin = (credentials) => {
+  AsyncStorage.setItem("domicareCredentials", JSON.stringify(credentials))
+      .then(() => {
+          setStoredCredentials(credentials);
+      })
+      .catch((err) => {
+          console.log(err);
+      });
+};
+  const login = ()=>{
+    let data=  { firstName, password }
+    axios.post("http://192.168.11.10:3000/login", data).then(res=>{
+      console.log(res)
+      const data=res.data
+      persistLogin({ userData: data });
+      if(localStorage.length!==0){
+        navigation.navigate('buttomTab')
+      }
+    }).catch(err=>{
+      console.log(err);
+    })
   }
-  render(){
+ 
     return (
       <View style={styles.container}>
         <Text style={styles.logo}>LOGIN</Text>
@@ -34,7 +49,7 @@ export default class Login extends React.Component {
             style={styles.inputText}
             placeholder="First Name..."
             placeholderTextColor="#fff"
-            onChangeText={(text) => this.setState({ firstName: text })}
+            onChangeText={(text) => setFirstName({ firstName : text })}
           />
         </View>
         <View style={styles.inputView}>
@@ -43,21 +58,21 @@ export default class Login extends React.Component {
             style={styles.inputText}
             placeholder="Password..."
             placeholderTextColor="#fff"
-            onChangeText={(text) => this.setState({ password: text })}
+            onChangeText={(text) => setPassword({ password: text })}
+            
           />
         </View>
         <TouchableOpacity>
           <Text style={styles.forgot}>Forgot Password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.loginBtn}>
-          <Button title="Login" onPress={this.Login} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.loginText}>Signup</Text>
-        </TouchableOpacity>
+        {/* <TouchableOpacity style={styles.loginBtn}>< */}
+          <Button title="Login" onPress={()=>login()} />
+          {/* onPress={this.login} */}
+        {/* </TouchableOpacity> */}
+        <Text  onPress={navigateTosignUp}>or sign in </Text>
       </View>
     );
-  }
+  
 }
 
 const styles = StyleSheet.create({
