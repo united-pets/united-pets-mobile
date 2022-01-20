@@ -13,7 +13,8 @@ import FoundPet from './Components/FoundPet';
 import Posts from './Components/Posts'
 import Gallery from './Components/Gallery';
 import PetService from './Components/PetService';
-import PetsSetting from './Components/PetsSetting'
+import PetsSetting from './Components/PetsSetting';
+import Grooming from './Components/Grooming'
 
 import { render } from 'react-dom';
 // const Stack = createNativeStackNavigator();
@@ -37,8 +38,9 @@ export default function App() {
       {/* <SignUp /> */}
       {/* <Posts/> */}
       {/* <PetService/> */}
-      <Login />
+      {/* <Login /> */}
       {/* <Cam/> */}
+      <Grooming/>
       {/* <PetsSetting/> */}
       <StatusBar style="auto" />
     </View>
