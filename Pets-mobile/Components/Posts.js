@@ -20,7 +20,7 @@ export default function Posts() {
   console.log(posts);
   fetchPostsData = () => {
     axios
-      .get("http://192.168.11.122:3000/getAll")
+      .get("http://192.168.11.201:3000/getAll")
       .then((response) => {
         const posts = response.data;
         setPosts(posts);

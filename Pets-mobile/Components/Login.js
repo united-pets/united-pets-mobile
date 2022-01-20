@@ -14,11 +14,10 @@ export default class Login extends React.Component {
     
     try {
 
-        const res = await axios
-        .post("http://localhost:3000/login", {
-          firstName : firstName,
-          password:password
-        })
+        const res = await axios.post("http://192.168.1.208:3000/login", {
+          firstName: firstName,
+          password: password,
+        });
     //   // here place your signup logic
     //   console.log('user successfully signed up!: ')
     } catch (err) {
