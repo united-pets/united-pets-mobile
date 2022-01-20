@@ -1,10 +1,13 @@
 import * as React from "react";
-import { ImageBackground,Text, View, StyleSheet, Image } from "react-native";
+import { ImageBackground,Text, View, StyleSheet, Image , Button} from "react-native";
 
 const image1 = {
   uri: "https://w7.pngwing.com/pngs/885/839/png-transparent-paw-prints-paw-dog-footprint-printing-cat-dog-animals-pet-monochrome.png",
 };
-export default function AssetExample() {
+export default function AssetExample({navigation}) {
+  const navigatetologin = () =>{
+  navigation.navigate('login')
+  }
   return (
     <View style={styles.container}>
       {/* <ImageBackground source={image1} resizeMode="cover" style={styles.image1}>
@@ -14,9 +17,9 @@ export default function AssetExample() {
         source={require("../assets/breeder_img04.jpg")}
       />
       <Text style={styles.text}>Welcome</Text>
+      <Button title="join us" onPress={navigatetologin}/>
     </View>
   );
-    
 }
 
 const styles = StyleSheet.create({
