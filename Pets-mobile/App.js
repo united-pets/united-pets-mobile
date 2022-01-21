@@ -17,6 +17,7 @@ import PetService from './Components/PetService';
 import PetsSetting from './Components/PetsSetting';
 import Grooming from './Components/Grooming'
 import LostPetForm from './Components/LostPetForm';
+import PetsWalker from './Components/PetsWalker';
 
 
 import { render } from 'react-dom';
@@ -40,13 +41,14 @@ export default function App() {
       {/* <Gallery/> */}
       {/* <SignUp /> */}
       {/* <Posts/> */}
-      <PetService/>
+      {/* <PetService/> */}
       {/* <Login /> */}
-      {/* <Cam/> */}
+    
       {/* <Grooming/> */}
       {/* <PetsSetting/> */}
       {/* <LostPetForm/> */}
-    
+      <PetsWalker/>
+
       <StatusBar style="auto" />
     </View>
     // </NavigationContainer>

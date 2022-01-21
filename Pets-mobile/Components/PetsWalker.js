@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import {link} from "react-router-dom"
+
 import {
   Button,
   StyleSheet,
@@ -26,7 +26,7 @@ export default class ButtonBasics extends Component {
             style={{
               width: 330,
               borderRadius: 20,
-              backgroundColor: "#9D68532B",
+              backgroundColor: "#9F654F26",
               flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
@@ -41,13 +41,13 @@ export default class ButtonBasics extends Component {
                 fontSize: 25,
               }}
             >
-              Pets Walk
+              Daily Pets Walk
             </Text>
             <Image
               style={styles.Timage}
-              source={require("../assets/pet-care-dog-sitting-services.png")}
+              source={require("../assets/header-walker.png")}
               resizeMode="contain"
-              style={{ flex: 1 }}
+              style={{ flex: 0.6 }}
             />
           </TouchableOpacity>
         </View>
@@ -63,7 +63,7 @@ export default class ButtonBasics extends Component {
             style={{
               width: 330,
               borderRadius: 20,
-              backgroundColor: "#FAECA896",
+              backgroundColor: "#9F654F26",
               flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
@@ -75,16 +75,16 @@ export default class ButtonBasics extends Component {
                 color: "black",
                 fontWeight: "bold",
                 textAlign: "center",
-                fontSize: 22,
+                fontSize: 25,
               }}
             >
-              Dayly pets walker 
+              weekly pets walk
             </Text>
             <Image
               style={styles.Timage}
-              source={require("../assets/images__1_-removebg-preview.png")}
+              source={require("../assets/header-walker.png")}
               resizeMode="contain"
-              style={{ flex: 1 }}
+              style={{ flex: 0.8 }}
             />
           </TouchableOpacity>
         </View>
@@ -116,13 +116,13 @@ export default class ButtonBasics extends Component {
                 fontSize: 25,
               }}
             >
-              Personnalised Offer 
+              Personnalised Offer
             </Text>
             <Image
               style={styles.Timage}
               source={require("../assets/header-walker.png")}
               resizeMode="contain"
-              style={{ flex: 0.6 }}
+              style={{ flex: 0.8 }}
             />
           </TouchableOpacity>
         </View>
