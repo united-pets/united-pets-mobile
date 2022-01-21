@@ -1,20 +1,38 @@
 import React from 'react';
 import { Button ,StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import axios from 'axios';
-import { useState } from 'react/cjs/react.development';
+import { useState , useEffect } from 'react/cjs/react.development';
+import * as Location from "expo-location";
 import Cameracomp from './Cameracomp';
-import useLocation from './useLocation';
+// import useLocation from './useLocation';
 
 export default function LostPetForm (){
     const [animalImage, setAnimalImage] =  useState();
     const [animalName , setAnimalName] = useState();
     const [animalDescription, setAnimalDescription] = useState();
-    const [latitude , setLatitude] = useState();
-    const [longitude , setLongitude] = useState();
-    const location = useLocation();
+    const [location, setLocation] = useState();
+    const getLocation = async () => {
+      try {
+        const { granted } = await Location.requestForegroundPermissionsAsync();
+        if (!granted) return;
+        // console.log('hoo');
+        const {
+          coords: { latitude, longitude },  
+        } = await Location.getCurrentPositionAsync();
+        // console.log(coords);
+        setLocation({ latitude, longitude });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    useEffect(() => {
+      getLocation();
+      // handleSendLocation();
+      // console.log(location);
+    }, []);
     
     const handleSendLostPet = () => {
-        axios.post("http://192.168.11.58:3000/lostPetForm", {
+        axios.post("http://192.168.11.10:3000/lostPetForm", {
         AnimalImage:animalImage , 
         AnimalName:animalName,
         AnimalDescription:animalDescription,
@@ -63,8 +81,7 @@ style={styles.inputText} >
     <Button 
     title="Localisation "
      onPress={()=>{
-         setLatitude(location.latitude);
-         setLongitude(location.longitude);
+        
          alert('Location up : ' +location.latitude +','+location.longitude)
      }}
     />

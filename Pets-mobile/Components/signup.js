@@ -16,7 +16,7 @@ export default class SignUp extends React.Component {
     const { firstName, lastName, email, phoneNumber , password ,adress , imageUrl } = this.state
     
     try {
-        const res = await axios.post("http://192.168.11.10:3000/signup", {
+        const res = await axios.post("http://192.168.11.142:3000/signup", {
           firstName: firstName,
           lastName: lastName,
           email: email,
