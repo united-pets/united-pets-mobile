@@ -9,6 +9,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+import Communications from "react-native-communications";
 import { Paragraph } from "react-native-paper";
 export default class ButtonBasics extends Component {
   render() {
@@ -49,7 +50,7 @@ export default class ButtonBasics extends Component {
                 style={styles.Timage}
                 source={require("../assets/groooming.png")}
                 resizeMode="contain"
-                style={{ flex:1 }}
+                style={{ flex: 1 }}
               />
               <Paragraph>
                 Regular grooming is essential to your pet's health as it helps
@@ -62,7 +63,37 @@ export default class ButtonBasics extends Component {
                   alignItems: "center",
                 }}
               >
-                <Button title="Call Now" />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.phonecall("0021624217104", true)
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}> Call </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.email(
+                      ["unitedpetsofficial@yahoo.com"],
+                      null,
+                      null,
+                      "take Appointment",
+                      "Pets Grooming appointment"
+                    )
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}>Email</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() => Communications.text("0021624217104")}
+                >
+                  <Text style={styles.buttonTextStyle}>MSG</Text>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           </View>
@@ -100,11 +131,11 @@ export default class ButtonBasics extends Component {
                 style={styles.Timage}
                 source={require("../assets/groooming.png")}
                 resizeMode="contain"
-                style={{ flex:1 }}
+                style={{ flex: 1 }}
               />
               <Paragraph>
-                We’ll suds away dirt, oil and debris plus brushout to
-                help skin and coats of all types look and feel great.
+                We’ll suds away dirt, oil and debris plus brushout to help skin
+                and coats of all types look and feel great.
               </Paragraph>
               <View
                 style={{
@@ -113,7 +144,37 @@ export default class ButtonBasics extends Component {
                   alignItems: "center",
                 }}
               >
-                <Button title="Call Now" />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.phonecall("0021624217104", true)
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}> Call </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.email(
+                      ["unitedpetsofficial@yahoo.com"],
+                      null,
+                      null,
+                      "take Appointment",
+                      "Pets Grooming appointment"
+                    )
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}>Email</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() => Communications.text("0021624217104")}
+                >
+                  <Text style={styles.buttonTextStyle}>MSG</Text>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           </View>
@@ -151,7 +212,7 @@ export default class ButtonBasics extends Component {
                 style={styles.Timage}
                 source={require("../assets/groooming.png")}
                 resizeMode="contain"
-                style={{ flex:1 }}
+                style={{ flex: 1 }}
               />
               <Paragraph>
                 Upgrade their visit with packages designed to target specific
@@ -164,7 +225,37 @@ export default class ButtonBasics extends Component {
                   alignItems: "center",
                 }}
               >
-                <Button title="Call Now" />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.phonecall("0021624217104", true)
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}> Call </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.email(
+                      ["unitedpetsofficial@yahoo.com"],
+                      null,
+                      null,
+                      "take Appointment",
+                      "Pets Grooming appointment"
+                    )
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}>Email</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() => Communications.text("0021624217104")}
+                >
+                  <Text style={styles.buttonTextStyle}>MSG</Text>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           </View>
@@ -202,7 +293,7 @@ export default class ButtonBasics extends Component {
                 style={styles.Timage}
                 source={require("../assets/groooming.png")}
                 resizeMode="contain"
-                style={{ flex:1 }}
+                style={{ flex: 1 }}
               />
               <Paragraph>
                 Help care for your pet with essential services such as nail
@@ -215,7 +306,42 @@ export default class ButtonBasics extends Component {
                   alignItems: "center",
                 }}
               >
-                <Button title="Call Now" />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.phonecall("0021624217104", true)
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}> Call </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.email(
+                      ["unitedpetsofficial@yahoo.com"],
+                      null,
+                      null,
+                      "take Appointment",
+                      "Pets Grooming appointment"
+                    )
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}>Email</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.text(
+                      "0021624217104",
+                      
+                    )
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}>MSG</Text>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           </View>
@@ -248,5 +374,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "red",
     borderRadius: 30,
+  },
+  buttonStyle: {
+    justifyContent: "center",
+    marginTop: 20,
+    marginRight: 8,
+    marginBottom: 5,
+    // padding: 10,
+    width: 70,
+    height: 40,
+    backgroundColor: "#39CB23",
+    borderRadius: 15,
+  },
+  buttonTextStyle: {
+    color: "#fff",
+    textAlign: "center",
   },
 });

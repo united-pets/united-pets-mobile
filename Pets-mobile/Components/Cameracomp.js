@@ -18,10 +18,10 @@ export default function App() {
   const [cameraType, setCameraType] = useState(Camera.Constants.Type.back);
   const [isPreview, setIsPreview] = useState(false);
   const [isCameraReady, setIsCameraReady] = useState(false);
-  const [isVideoRecording, setIsVideoRecording] = useState(false);
+ 
   const [videoSource, setVideoSource] = useState(null);
   const cameraRef = useRef();
-  useEffect(() => {
+  useEffect(() => { 
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
       setHasPermission(status === "granted");

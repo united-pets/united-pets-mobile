@@ -63,8 +63,23 @@ export default class ButtonBasics extends Component {
                   alignItems: "center",
                 }}
               >
-                <Button title="Bye Now" />
-                <Button title="More Info" />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.phonecall("0021624217104", true)
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}> Call </Text>
+                </TouchableOpacity>
+          
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() => Communications.text("0021624217104")}
+                >
+                  <Text style={styles.buttonTextStyle}>MSG</Text>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           </View>
@@ -116,8 +131,23 @@ export default class ButtonBasics extends Component {
                   alignItems: "center",
                 }}
               >
-                <Button title="Bye Now" />
-                <Button title="More Info" />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.phonecall("0021624217104", true)
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}> Call </Text>
+                </TouchableOpacity>
+          
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() => Communications.text("0021624217104")}
+                >
+                  <Text style={styles.buttonTextStyle}>MSG</Text>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           </View>
@@ -168,8 +198,23 @@ export default class ButtonBasics extends Component {
                   alignItems: "center",
                 }}
               >
-                <Button title="Bye Now" />
-                <Button title="More Info" />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.phonecall("0021624217104", true)
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}> Call </Text>
+                </TouchableOpacity>
+          
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() => Communications.text("0021624217104")}
+                >
+                  <Text style={styles.buttonTextStyle}>MSG</Text>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           </View>
@@ -220,8 +265,23 @@ export default class ButtonBasics extends Component {
                   alignItems: "center",
                 }}
               >
-                <Button title="Bye Now" />
-                <Button title="More Info" />
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() =>
+                    Communications.phonecall("0021624217104", true)
+                  }
+                >
+                  <Text style={styles.buttonTextStyle}> Call </Text>
+                </TouchableOpacity>
+          
+                <TouchableOpacity
+                  activeOpacity={0.7}
+                  style={styles.buttonStyle}
+                  onPress={() => Communications.text("0021624217104")}
+                >
+                  <Text style={styles.buttonTextStyle}>MSG</Text>
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           </View>
@@ -242,9 +302,9 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
   },
-//   buttonContainer: {
-//     margin: 8,
-//   },
+  //   buttonContainer: {
+  //     margin: 8,
+  //   },
 
   text: {
     color: "white",
@@ -254,5 +314,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "red",
     borderRadius: 30,
+  },
+  buttonStyle: {
+    justifyContent: "center",
+    marginTop: 20,
+    marginRight:8,
+    marginBottom: 5,
+    // padding: 10,
+    width: 70,
+    height: 40,
+    backgroundColor: "#39CB23",
+    borderRadius: 15,
+  },
+  buttonTextStyle: {
+    color: "#fff",
+    textAlign: "center",
   },
 });

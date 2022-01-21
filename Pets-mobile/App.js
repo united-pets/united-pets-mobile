@@ -18,6 +18,7 @@ import PetsSetting from './Components/PetsSetting';
 import Grooming from './Components/Grooming'
 import LostPetForm from './Components/LostPetForm';
 
+
 import { render } from 'react-dom';
 // const Stack = createNativeStackNavigator();
 
@@ -39,12 +40,13 @@ export default function App() {
       {/* <Gallery/> */}
       {/* <SignUp /> */}
       {/* <Posts/> */}
-      {/* <PetService/> */}
+      <PetService/>
       {/* <Login /> */}
       {/* <Cam/> */}
       {/* <Grooming/> */}
       {/* <PetsSetting/> */}
-      <LostPetForm/>
+      {/* <LostPetForm/> */}
+    
       <StatusBar style="auto" />
     </View>
     // </NavigationContainer>
