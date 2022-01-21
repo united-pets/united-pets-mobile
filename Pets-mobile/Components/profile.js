@@ -1,119 +1,140 @@
-import React from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   View,
+  // Text,
   Button,
   TextInput,
   StyleSheet,
-  TouchableOpacity
-} from 'react-native'
+  ScrollView,
+  SafeAreaViewBase,
+  SafeAreaView,
+} from "react-native";
+import{ Avatar , Title , Caption , Text , TouchableOpacity , TouchableRipple} from 'react-native-paper'
+import  Icon  from "react-native-vector-icons/MaterialCommunityIcons";
+export default function profile({navigation}) {
+  
+return(
+  <SafeAreaView style={styles.container} >
 
-export default class SignUp extends React.Component {
-  state = {
-    firstName: '', lastName: '', email: '', phoneNumber: '' , 
-    password: '', adress: '', imageUrl: ''
-  }
-  onChangeText = (key, val) => {
-    this.setState({ [key]: val })
-  }
-  SignUp = async () => {
-    const { firstName, lastName, email, phoneNumber , password ,adress , imageUrl } = this.state
-    
-    try {
-
-        const res = await axios
-        .post("http://192.168.11.126:3000/signupM",{
-          firstName : firstName,
-          lastName:lastName,
-          email:email,
-          phoneNumber:phoneNumber,
-          password:password ,
-          adress:adress,
-          imageUrl:imageUrl
-        })
-    } catch (err) {
-      console.log('error signing up: ', err)
-    }
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          placeholder="first Name"
-          autoCapitalize="none"
-          placeholderTextColor="white"
-          onChangeText={(val) => this.onChangeText("firstName", val)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="last Name"
-          autoCapitalize="none"
-          placeholderTextColor="white"
-          onChangeText={(val) => this.onChangeText("lastName", val)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="email"
-          autoCapitalize="none"
-          placeholderTextColor="white"
-          onChangeText={(val) => this.onChangeText("email", val)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="phone Number"
-          autoCapitalize="none"
-          placeholderTextColor="white"
-          onChangeText={(val) => this.onChangeText("phoneNumber", val)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Adress"
-          autoCapitalize="none"
-          placeholderTextColor="white"
-          onChangeText={(val) => this.onChangeText("adress", val)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          secureTextEntry={true}
-          autoCapitalize="none"
-          placeholderTextColor="white"
-          onChangeText={(val) => this.onChangeText("password", val)}
-        />
-        <TouchableOpacity style={styles.loginBtn}>
-          <Button title="Sign Up" onPress={this.SignUp} />
-        </TouchableOpacity>
+  <View styles={styles.userInfoSection}>
+   <View style={{ flexDirection:'row' , marginTop:'15'}}>
+     <Avatar.Image source={{
+       uri : 'https://www.google.com/search?q=image+de+anonyme&client=opera-gx&sxsrf=AOaemvI9T6nz1pcbDMeHPgNuG9Xr4_TV2Q:1642759030609&tbm=isch&source=iu&ictx=1&vet=1&fir=F93sgwCMyD0y7M%252CDWLLjX9GsIUILM%252C_%253BcYBcibCp2vJGUM%252CHL0vwxI9543HzM%252C_%253BqX0Tqp28Xq54xM%252CHL0vwxI9543HzM%252C_%253BzXmdXP88C02lVM%252CDWLLjX9GsIUILM%252C_%253BonwZO-aGWbYFdM%252CHL0vwxI9543HzM%252C_%253BBU61O1hhUb-4qM%252CaOHRKxHMprIPtM%252C_%253Bm1cQC2Fyf7qUlM%252CKUrqDhkyOivhXM%252C_%253BjXyQyfdf9coeIM%252CDWLLjX9GsIUILM%252C_%253B5ziM61AjMDMKwM%252CKUrqDhkyOivhXM%252C_%253BsJiem4_xSvPqAM%252CHL0vwxI9543HzM%252C_%253Bq7ux2tltcsewyM%252CDWLLjX9GsIUILM%252C_%253BHrCdxGUNIOHHmM%252CY3fFySXQ4D5iUM%252C_%253BW-iowIcoLZJYkM%252CwPEpHlv0MFiDQM%252C_%253BO8NsVQPBDbFY5M%252Cu4KCT7sIRd3GGM%252C_%253BTDkAiZXNl7JPzM%252Cmgv3Mao67A4qDM%252C_%253BLCbVKJmhmJr5NM%252CY3fFySXQ4D5iUM%252C_&usg=AI4_-kT49gbYlVqvLHb-Zo9SOZBfzZUwCw&sa=X&ved=2ahUKEwjX4uGjysL1AhWvsKQKHcUdDfMQ9QF6BAgZEAE#imgrc=onwZO-aGWbYFdM'
+     }}
+     size={80}
+     />
+     <View style={{marginLeft:20}}>
+       <Title style={[styles.title , {marginTop:'15', marginBottom:'5'} ]}>hello hello</Title>
+       <Caption style={styles.caption}>caption</Caption>
       </View>
-    );
-  }
-}
+     </View>
+  </View>
 
+<View style={styles.userInfoSection}>
+<View style={styles.row}>
+  <Icon name="map-marker-radius" color="#777777" size={20} />
+  <Text style={{color: "#777777", marginLeft : 20}} > location </Text>
+</View>
+<View style={styles.row}>
+  <Icon name="phone" color="#777777" size={20} />
+  <Text style={{color: "#777777", marginLeft : 20}} > location </Text>
+</View><View style={styles.row}>
+  <Icon name="email" color="#777777" size={20} />
+  <Text style={{color: "#777777", marginLeft : 20}} > location </Text>
+</View>
+</View>
+
+<View style={styles.infoBoxWrapper}>
+  <View style={[styles.infoBox , {
+    borderRightColor:'#dddddd',
+    borderRightWidth:1
+  }]}>
+    <Title>2</Title>
+    <Caption>pets</Caption>
+  </View>
+  <View style={styles.infoBox}>
+    <Title>3</Title>
+    <Caption> posts </Caption>
+  </View>
+</View>
+<View style={styles.menuWrapper}>
+ 
+  <TouchableRipple style={styles.menuItem} onPress={()=>navigation.navigate('UpdateProfile')}>
+   <Text style={styles.menuItemText}>
+   <Icon name='heart-outline' color="#FF6347" size={25} />
+     your Pets
+   </Text>
+  </TouchableRipple>
+  <TouchableRipple style={styles.menuItem} onPress={()=>{}}>
+   <Text style={styles.menuItemText}>
+   <Icon name='heart-outline' color="#FF6347" size={25} />
+     your Posts
+   </Text>
+  </TouchableRipple>
+  <TouchableRipple style={styles.menuItem} onPress={()=>{}}>
+   <Text style={styles.menuItemText}>
+   <Icon name='heart-outline' color="#FF6347" size={25} />
+     contact us
+   </Text>
+  </TouchableRipple>
+  <TouchableRipple style={styles.menuItem} onPress={()=>{}}>
+   <Text style={styles.menuItemText}>
+   <Icon name='heart-outline' color="#FF6347" size={25} />
+     settings
+   </Text>
+  </TouchableRipple>
+</View>
+</SafeAreaView>
+)
+}
 const styles = StyleSheet.create({
-  input: {
-    width: 300,
-    height: 55,
-    backgroundColor: "#fca500",
-    margin: 10,
-    padding: 8,
-    color: "white",
-    borderRadius: 25,
-    fontSize: 18,
-    fontWeight: "500",
-  },
-  container: {
+  container:{
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
-  loginBtn: {
-    width: "60%",
-    backgroundColor: "#275C76",
-    borderRadius: 25,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    marginBottom: 10,
+  userInfoSection:{
+    paddingHorizontal:30,
+    marginBottom:25,
   },
-});
+  title:{
+    fontSize : 24,
+    fontWeight : 'bold'
+  },
+  caption:{
+    fontSize:14,
+    lineHeight:14,
+    fontWeight:'500'
+  },
+  row:{
+    flexDirection : 'row',
+    marginBottom:10,
+  },
+  infoBoxWrapper:{
+  borderBottomColor : '#dddddd',
+  borderBottomWidth:1,
+  borderTopColor:'#dddddd',
+  borderTopWidth:1,
+  flexDirection: 'row',
+  height:100,
+  },
+  infoBox:{
+    width:'50%',
+    alignItems:'center',
+    justifyContent : 'center',
+  },
+  menuWrapper:{
+    marginTop:10,
+  },
+  menuItem:{
+    flexDirection:'row',
+    paddingVertical:15,
+    paddingHorizontal:30,
+  },
+  menuItemText:{
+    color:'#777777',
+    marginLeft:20,
+    fontWeight:'600',
+    fontSize:16,
+    lineHeight:26
+  },
+})

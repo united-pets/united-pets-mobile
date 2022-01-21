@@ -6,7 +6,7 @@ import {
   Text,
   Button,
   TextInput,
-StyleSheet,
+  StyleSheet,
   ScrollView,
   TouchableOpacity,
 } from "react-native";
@@ -20,7 +20,7 @@ export default function Posts() {
   console.log(posts);
   const fetchPostsData = () => {
     axios
-      .get("http://192.168.11.201:3000/getAll")
+      .get("http://192.168.1.208:3000/getAll")
       .then((response) => {
         const posts = response.data;
         setPosts(posts);
@@ -46,8 +46,8 @@ export default function Posts() {
 
         <ScrollView style={{ flexGrow: 1 }}>
           {/* <MarkedList counterRenderer={disc}> */}
-          {posts.map((item) => (
-            <View style={styles.mycard}>
+          {posts.map((item,i) => (
+            <View style={styles.mycard} key='key' >
               <Card>
                 <Card.Title
                   title={item.AnimalName}

@@ -11,345 +11,331 @@ import {
 } from "react-native";
 import Communications from "react-native-communications";
 import { Paragraph } from "react-native-paper";
-export default class ButtonBasics extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        {/* <Image style={styles.logo1} source={require("../assets/scroll.png")} /> */}
-        <ScrollView style={{ flexGrow: 0.8 }}>
-          <View
+export default function Grooming({ navigation }) {
+  return (
+    <View style={styles.container}>
+      {/* <Image style={styles.logo1} source={require("../assets/scroll.png")} /> */}
+      <ScrollView style={{ flexGrow: 0.8 }}>
+        <View
+          style={{
+            flex: 0.5,
+            backgroundColor: "#fff",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity
             style={{
-              flex: 0.5,
-              backgroundColor: "#fff",
+              width: 320,
+              borderRadius: 20,
+              backgroundColor: "#FAECA896",
+              // flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
+              height: 150,
             }}
           >
-            <TouchableOpacity
+            <Text
               style={{
-                width: 320,
-                borderRadius: 20,
-                backgroundColor: "#FAECA896",
-                // flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 150,
+                color: "Black",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontSize: 20,
               }}
             >
-              <Text
-                style={{
-                  color: "Black",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  fontSize: 20,
-                }}
+              Breed-specific Haircuts
+            </Text>
+            <Image
+              style={styles.Timage}
+              source={require("../assets/groooming.png")}
+              resizeMode="contain"
+              style={{ flex: 1 }}
+            />
+            <Paragraph>
+              Regular grooming is essential to your pet's health as it helps
+              prevent skin issues such as matting.
+            </Paragraph>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() => Communications.phonecall("0021624217104", true)}
               >
-                Breed-specific Haircuts
-              </Text>
-              <Image
-                style={styles.Timage}
-                source={require("../assets/groooming.png")}
-                resizeMode="contain"
-                style={{ flex: 1 }}
-              />
-              <Paragraph>
-                Regular grooming is essential to your pet's health as it helps
-                prevent skin issues such as matting.
-              </Paragraph>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                <Text style={styles.buttonTextStyle}> Call </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() =>
+                  Communications.email(
+                    ["unitedpetsofficial@yahoo.com"],
+                    null,
+                    null,
+                    "take Appointment",
+                    "Pets Grooming appointment"
+                  )
+                }
               >
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.phonecall("0021624217104", true)
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}> Call </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.email(
-                      ["unitedpetsofficial@yahoo.com"],
-                      null,
-                      null,
-                      "take Appointment",
-                      "Pets Grooming appointment"
-                    )
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}>Email</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() => Communications.text("0021624217104")}
-                >
-                  <Text style={styles.buttonTextStyle}>MSG</Text>
-                </TouchableOpacity>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
+                <Text style={styles.buttonTextStyle}>Email</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() => Communications.text("0021624217104")}
+              >
+                <Text style={styles.buttonTextStyle}>MSG</Text>
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flex: 0.5,
+            backgroundColor: "#fff",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity
             style={{
-              flex: 0.5,
-              backgroundColor: "#fff",
+              width: 320,
+              borderRadius: 20,
+              backgroundColor: "#FAECA896",
+              // flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
+              height: 150,
+              marginTop: 20,
             }}
           >
-            <TouchableOpacity
+            <Text
               style={{
-                width: 320,
-                borderRadius: 20,
-                backgroundColor: "#FAECA896",
-                // flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 150,
-                marginTop: 20,
+                color: "black",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontSize: 20,
               }}
             >
-              <Text
-                style={{
-                  color: "black",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  fontSize: 20,
-                }}
+              Baths for Every Breed
+            </Text>
+            <Image
+              style={styles.Timage}
+              source={require("../assets/groooming.png")}
+              resizeMode="contain"
+              style={{ flex: 1 }}
+            />
+            <Paragraph>
+              We’ll suds away dirt, oil and debris plus brushout to help skin
+              and coats of all types look and feel great.
+            </Paragraph>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() => Communications.phonecall("0021624217104", true)}
               >
-                Baths for Every Breed
-              </Text>
-              <Image
-                style={styles.Timage}
-                source={require("../assets/groooming.png")}
-                resizeMode="contain"
-                style={{ flex: 1 }}
-              />
-              <Paragraph>
-                We’ll suds away dirt, oil and debris plus brushout to help skin
-                and coats of all types look and feel great.
-              </Paragraph>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                <Text style={styles.buttonTextStyle}> Call </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() =>
+                  Communications.email(
+                    ["unitedpetsofficial@yahoo.com"],
+                    null,
+                    null,
+                    "take Appointment",
+                    "Pets Grooming appointment"
+                  )
+                }
               >
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.phonecall("0021624217104", true)
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}> Call </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.email(
-                      ["unitedpetsofficial@yahoo.com"],
-                      null,
-                      null,
-                      "take Appointment",
-                      "Pets Grooming appointment"
-                    )
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}>Email</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() => Communications.text("0021624217104")}
-                >
-                  <Text style={styles.buttonTextStyle}>MSG</Text>
-                </TouchableOpacity>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
+                <Text style={styles.buttonTextStyle}>Email</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() => Communications.text("0021624217104")}
+              >
+                <Text style={styles.buttonTextStyle}>MSG</Text>
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flex: 0.5,
+            backgroundColor: "#fff",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity
             style={{
-              flex: 0.5,
-              backgroundColor: "#fff",
+              width: 320,
+              borderRadius: 20,
+              backgroundColor: "#FAECA896",
+              // flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
+              height: 150,
+              marginTop: 20,
             }}
           >
-            <TouchableOpacity
+            <Text
               style={{
-                width: 320,
-                borderRadius: 20,
-                backgroundColor: "#FAECA896",
-                // flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 150,
-                marginTop: 20,
+                color: "black",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontSize: 20,
               }}
             >
-              <Text
-                style={{
-                  color: "black",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  fontSize: 20,
-                }}
+              Customized Packages
+            </Text>
+            <Image
+              style={styles.Timage}
+              source={require("../assets/groooming.png")}
+              resizeMode="contain"
+              style={{ flex: 1 }}
+            />
+            <Paragraph>
+              Upgrade their visit with packages designed to target specific
+              needs such as de-shedding, dry and sensitive skin care and more.
+            </Paragraph>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() => Communications.phonecall("0021624217104", true)}
               >
-                Customized Packages
-              </Text>
-              <Image
-                style={styles.Timage}
-                source={require("../assets/groooming.png")}
-                resizeMode="contain"
-                style={{ flex: 1 }}
-              />
-              <Paragraph>
-                Upgrade their visit with packages designed to target specific
-                needs such as de-shedding, dry and sensitive skin care and more.
-              </Paragraph>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                <Text style={styles.buttonTextStyle}> Call </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() =>
+                  Communications.email(
+                    ["unitedpetsofficial@yahoo.com"],
+                    null,
+                    null,
+                    "take Appointment",
+                    "Pets Grooming appointment"
+                  )
+                }
               >
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.phonecall("0021624217104", true)
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}> Call </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.email(
-                      ["unitedpetsofficial@yahoo.com"],
-                      null,
-                      null,
-                      "take Appointment",
-                      "Pets Grooming appointment"
-                    )
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}>Email</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() => Communications.text("0021624217104")}
-                >
-                  <Text style={styles.buttonTextStyle}>MSG</Text>
-                </TouchableOpacity>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
+                <Text style={styles.buttonTextStyle}>Email</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() => Communications.text("0021624217104")}
+              >
+                <Text style={styles.buttonTextStyle}>MSG</Text>
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flex: 0.5,
+            backgroundColor: "#fff",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity
             style={{
-              flex: 0.5,
-              backgroundColor: "#fff",
+              width: 320,
+              borderRadius: 20,
+              backgroundColor: "#FAECA896",
+              // flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
+              height: 150,
+              marginTop: 20,
             }}
           >
-            <TouchableOpacity
+            <Text
               style={{
-                width: 320,
-                borderRadius: 20,
-                backgroundColor: "#FAECA896",
-                // flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 150,
-                marginTop: 20,
+                color: "Black",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontSize: 20,
               }}
             >
-              <Text
-                style={{
-                  color: "Black",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  fontSize: 20,
-                }}
+              Walk-In Services
+            </Text>
+            <Image
+              style={styles.Timage}
+              source={require("../assets/groooming.png")}
+              resizeMode="contain"
+              style={{ flex: 1 }}
+            />
+            <Paragraph>
+              Help care for your pet with essential services such as nail
+              trimming, teeth-brushing and gland expressions.
+            </Paragraph>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() => Communications.phonecall("0021624217104", true)}
               >
-                Walk-In Services
-              </Text>
-              <Image
-                style={styles.Timage}
-                source={require("../assets/groooming.png")}
-                resizeMode="contain"
-                style={{ flex: 1 }}
-              />
-              <Paragraph>
-                Help care for your pet with essential services such as nail
-                trimming, teeth-brushing and gland expressions.
-              </Paragraph>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                <Text style={styles.buttonTextStyle}> Call </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() =>
+                  Communications.email(
+                    ["unitedpetsofficial@yahoo.com"],
+                    null,
+                    null,
+                    "take Appointment",
+                    "Pets Grooming appointment"
+                  )
+                }
               >
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.phonecall("0021624217104", true)
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}> Call </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.email(
-                      ["unitedpetsofficial@yahoo.com"],
-                      null,
-                      null,
-                      "take Appointment",
-                      "Pets Grooming appointment"
-                    )
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}>Email</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  activeOpacity={0.7}
-                  style={styles.buttonStyle}
-                  onPress={() =>
-                    Communications.text(
-                      "0021624217104",
-                      
-                    )
-                  }
-                >
-                  <Text style={styles.buttonTextStyle}>MSG</Text>
-                </TouchableOpacity>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </View>
-    );
-  }
+                <Text style={styles.buttonTextStyle}>Email</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.buttonStyle}
+                onPress={() => Communications.text("0021624217104")}
+              >
+                <Text style={styles.buttonTextStyle}>MSG</Text>
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </View>
+  );
 }
+
 
 const styles = StyleSheet.create({
   container: {
