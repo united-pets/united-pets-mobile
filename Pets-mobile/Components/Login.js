@@ -28,14 +28,14 @@ const persistLogin = (credentials) => {
       });
 };
   const login = ()=>{
-    let data=  { firstName, password }
+    let data =  { firstName, password }
     axios.post("http://192.168.11.10:3000/login", data).then(res=>{
       console.log(res)
       const data=res.data
-      persistLogin({ userData: data });
-      if(localStorage.length!==0){
+      // if(localStorage.length!==0 && data!=="userName wrong"){
+        persistLogin({ userData: data });
         navigation.navigate('buttomTab')
-      }
+      // }
     }).catch(err=>{
       console.log(err);
     })
@@ -49,7 +49,7 @@ const persistLogin = (credentials) => {
             style={styles.inputText}
             placeholder="First Name..."
             placeholderTextColor="#fff"
-            onChangeText={(text) => setFirstName({ firstName : text })}
+            onChangeText={(text) => setFirstName(text )}
           />
         </View>
         <View style={styles.inputView}>
@@ -58,7 +58,7 @@ const persistLogin = (credentials) => {
             style={styles.inputText}
             placeholder="Password..."
             placeholderTextColor="#fff"
-            onChangeText={(text) => setPassword({ password: text })}
+            onChangeText={(text) => setPassword(text )}
             
           />
         </View>
