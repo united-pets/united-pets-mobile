@@ -1,10 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {
-  View,
-  Button,
-  TextInput,
-  StyleSheet,
+import { View,Button, TextInput,  StyleSheet,
   TouchableOpacity
 } from 'react-native'
 
@@ -20,7 +16,7 @@ export default class SignUp extends React.Component {
     const { firstName, lastName, email, phoneNumber , password ,adress , imageUrl } = this.state
     
     try {
-        const res = await axios.post("http://192.168.11.10:3000/signup", {
+        const res = await axios.post("http://192.168.11.142:3000/signup", {
           firstName: firstName,
           lastName: lastName,
           email: email,
@@ -33,7 +29,6 @@ export default class SignUp extends React.Component {
       console.log('error signing up: ', err)
     }
   }
-
 
  
   render() {
