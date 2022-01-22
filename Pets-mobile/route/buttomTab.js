@@ -15,86 +15,83 @@ import Posts  from '../Components/Posts';
 import LostPetForm from '../Components/LostPetForm';
 import PetService from "../Components/PetService";
 
+import Add from '../Components/picture'
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import  Icon  from "react-native-vector-icons/MaterialCommunityIcons";
-
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
   return (
-    <Tab.Navigator
-      tabBarOptions={{
-        showLabel: false,
-        Style: {
-          position: "absolute",
-          bottom: 25,
-          left: 20,
-          elevation: 0,
-          backgroundColor: "#ffffff",
-          borderRadius: 15,
-          height: 90,
-          ...StyleSheet.shadow,
-        },
-      }}
-    >
-      <Tab.Screen
-        name={"foundPet"}
-        component={Posts}
-        options={{
-          tabBarIcon: ({ focused }) => (
+    <Tab.Navigator tabBarOptions={{
+      showLabel:false,
+      Style:{
+      position:'absolute',
+      bottom:25,
+      left:20,
+      elevation:0,
+      backgroundColor:'#ffffff',
+      borderRadius:15,
+      height:90,
+      ...StyleSheet.shadow
+      }
+    }}>
+      <Tab.Screen name={"foundPet"} component={Home}  options={
+        {
+          headerShown: false,
+          tabBarIcon:({focused})=>(
             <View>
-              {/* <Image /> */}
-              <Text>home</Text>
+             <FontAwesome5
+                name="home"
+                size={20}
+              ></FontAwesome5>
+           
             </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name={"home"}
-        component={Home}
-        options={{
-          tabBarIcon: ({ focused }) => (
+          )
+        }
+      }/>
+      <Tab.Screen name={"home"} component={Posts} 
+      options={
+        {
+          headerShown: false,
+          tabBarIcon:({focused})=>(
             <View>
-              {/* <Image /> */}
-              <Text>lost</Text>
+             <FontAwesome5
+                name="paw"
+                size={20}
+              ></FontAwesome5>
+           </View>
+          )
+        }
+      }/>
+      <Tab.Screen name={"found"} component={Add}
+      options={
+        {
+          headerShown: false,
+          tabBarIcon:({focused})=>(
+            <View>
+               <FontAwesome5
+                name="plus-square"
+                size={20}
+              ></FontAwesome5>
+           
             </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name={"add lost pet"}
-        component={LostPetForm}
-        options={{
-          tabBarIcon: ({ focused }) => (
+          )
+        }
+      }/>
+      <Tab.Screen name={"profile"} component={Profile} 
+      options={
+        {
+          headerShown: false,
+          tabBarIcon:({focused})=>(
             <View>
-              {/* <Image /> */}
-              <Text>add </Text>
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name={"United-Pets Services"}
-        component={PetService}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <View>
-              {/* <Image /> */}
-              <Text>Services</Text>
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name={"profile"}
-        component={Profile}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <View>
-              {/* <Image /> */}
-              <Text>profile</Text>
+               <FontAwesome5
+                name="user-alt"
+                size={20}
+              ></FontAwesome5>
+         
             </View>
           ),
         }}
@@ -113,6 +110,5 @@ export default function MyTabs() {
 //   shodowRadius:3.5,
 //   shodowOpacity : 0.25,
 //   elevation:5
-//  }
-//  }
-// )
+// }
+// })

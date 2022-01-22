@@ -1256,7 +1256,7 @@
   dependencies:
     "cross-spawn" "^6.0.5"
 
-"@expo/vector-icons@^12.0.4":
+"@expo/vector-icons@^12.0.4", "@expo/vector-icons@^12.0.5":
   "integrity" "sha512-zWvHBmkpbi1KrPma6Y+r/bsGI6MjbM1MBSe6W9A4uYMLhNI5NR4JtTnqxhf7g1XdpaDtBdv5aOWKEx4d5rxnhg=="
   "resolved" "https://registry.npmjs.org/@expo/vector-icons/-/vector-icons-12.0.5.tgz"
   "version" "12.0.5"
@@ -1768,7 +1768,7 @@
   "resolved" "https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz"
   "version" "1.1.0"
 
-"@react-native-async-storage/async-storage@^1.15.15":
+"@react-native-async-storage/async-storage@~1.15.0":
   "integrity" "sha512-Ss2FqWP9HC5AhCyP6ydRERSwWb8QMTLknETB8cp2+tbEUhu7Q/S5+e0QIrF0D2Z/YZTUvQ2MP7uXzt9FLG9OYQ=="
   "resolved" "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.15.15.tgz"
   "version" "1.15.15"

@@ -13,7 +13,6 @@
     "@callstack/react-theme-provider": "^3.0.7",
     "@jsamr/counter-style": "^2.0.1",
     "@jsamr/react-native-li": "^2.3.0",
-    "@react-native-async-storage/async-storage": "^1.15.15",
     "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
     "axios": "^0.24.0",
@@ -47,10 +46,14 @@
     "react-navigation": "^4.4.4",
     "react-navigation-stack": "^2.10.4",
     "react-number-format": "^4.9.1",
-    "sync-storage": "^0.4.2"
+    "sync-storage": "^0.4.2",
+    "@expo/vector-icons": "^12.0.5",
+       
+        "@react-native-async-storage/async-storage": "~1.15.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
   "private": true
+  
 }

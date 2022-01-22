@@ -6,7 +6,7 @@ const image1 = {
 };
 export default function AssetExample({navigation}) {
   const navigatetologin = () =>{
-  navigation.navigate('login')
+  navigation.navigate('Login')
   }
   return (
     <View style={styles.container}>
