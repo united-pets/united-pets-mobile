@@ -1,58 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
-import Cameracomp from './Components/Cameracomp';
-// import { NavigationContainer } from "@react-navigation/native";
-// import { createNativeStackNavigator } from "@react-navigation/native-stack";
-// import { ReactDOM } from 'react-dom';
-// import { BrowserRouter, Route, Switch } from "react-router-dom";
-// import GetIteml from './Components/GetIteml'
-import Login from './Components/Login';
-import SignUp from "./Components/signup";
-import  HomePage  from './Components/HomePage';
-import FoundPet from './Components/FoundPet';
-import Posts from './Components/Posts'
-import Gallery from './Components/Gallery';
+import { NavigationContainer } from "@react-navigation/native";
 
-import { render } from 'react-dom';
-// const Stack = createNativeStackNavigator();
-
-// function MyStack() {
-//   return (
-//     <Stack.Navigator>
-//       <Stack.Screen name="foundPet" component={foundPet} />
-//     </Stack.Navigator>
-//   );
-// }
+import Navigator from './route/navigation'
+import PetsWalker from './Components/PetsWalker';
+import PetsSetting from './Components/PetsSetting';
+import PetServices from './Components/PetService';
+import Grooming from './Components/Grooming';
 export default function App() {
   return (
-    // <NavigationContainer>
-    <View style={styles.container}>
-      {/* <FoundPet /> */}
-      {/* <HomePage/> */}
-      {/* <GetIteml/> */}
-      {/* <Cameracomp /> */}
-      <Gallery/>
-      {/* <SignUp /> */}
-      {/* <Posts/> */}
-      {/* <Login /> */}
-      {/* <Cam/> */}
-      <StatusBar style="auto" />
-    </View>
+    //  <NavigationContainer>
+    //  <Navigator/>
     // </NavigationContainer>
-
-    // <NavigationContainer>
-    //   <MyStack />
-    // </NavigationContainer>
+    <Grooming />
   );
 }
+  
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    justifyContent: 'center',
-    
+    flex: 1,  
   },
-      
 });

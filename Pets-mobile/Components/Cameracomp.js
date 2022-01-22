@@ -10,18 +10,20 @@ import {
 } from "react-native";
 import { Camera } from "expo-camera";
 import { Video } from "expo-av";
+
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 const closeButtonSize = Math.floor(WINDOW_HEIGHT * 0.032);
 const captureSize = Math.floor(WINDOW_HEIGHT * 0.09);
-export default function App() {
+// const storage =firebase.storage();
+export default function CameraForm(props) {
   const [hasPermission, setHasPermission] = useState(null);
   const [cameraType, setCameraType] = useState(Camera.Constants.Type.back);
   const [isPreview, setIsPreview] = useState(false);
   const [isCameraReady, setIsCameraReady] = useState(false);
-  const [isVideoRecording, setIsVideoRecording] = useState(false);
+ 
   const [videoSource, setVideoSource] = useState(null);
   const cameraRef = useRef();
-  useEffect(() => {
+  useEffect(() => { 
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
       setHasPermission(status === "granted");
@@ -38,6 +40,7 @@ export default function App() {
       if (source) {
         await cameraRef.current.pausePreview();
         setIsPreview(true);
+        // uploadFile()
         console.log("picture source", source);
       }
     }
@@ -85,6 +88,39 @@ export default function App() {
   if (hasPermission === false) {
     return <Text style={styles.text}>No access to camera</Text>;
   }
+//   const uploadFile = async () => {
+//     const blob = await new Promise((resolve, reject) => {
+//         const xhr = new XMLHttpRequest();
+//         xhr.onload = function () {
+//             resolve(xhr.response);
+//         };
+//         xhr.onerror = function () {
+//             reject(new TypeError("Network request failed"));
+//         };
+//         xhr.responseType = "blob";
+//         xhr.open("GET", file, true);
+//         xhr.send(null);
+//     });
+//     const ref = storage.ref().child(new Date().toISOString());
+//     const snapshot = ref.put(blob);
+//     snapshot.on(
+//         storage.TaskEvent,
+//         () => {
+//             setUploading("loading");
+//         },
+//         (error) => {
+//             setUploading("none");
+//             console.log(error);
+//             return;
+//         },
+//         () => {
+//             snapshot.snapshot.ref.getDownloadURL().then((url) => {
+//                 setUploading("done");
+//                 setData({ ...formData, certificate: url });
+//             });
+//         }
+//     );
+// };
   return (
     <SafeAreaView style={styles.container}>
       <Camera
