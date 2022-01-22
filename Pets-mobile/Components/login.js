@@ -29,15 +29,17 @@ const persistLogin = (credentials) => {
 };
   const login = ()=>{
     let data=  { firstName, password }
-    axios.post("http://192.168.11.142:3000/login", data).then(res=>{
-      console.log(res)
-      const data=res.data
-      persistLogin({ userData: data });
+    axios.post("http://192.168.11.142:3000/login", data).then(
+      // res=>{
+      // console.log(res)
+      // const data=res.data
+      // persistLogin({ userData: data });
       navigation.navigate('buttomTab')
       // if(localStorage.length!==0){
       // }
       // NavigateToFoundPet()
-    }).catch(err=>{
+    // }
+    ).catch(err=>{
       console.log(err);
     })
   }

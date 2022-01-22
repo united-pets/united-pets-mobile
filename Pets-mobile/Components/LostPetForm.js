@@ -6,7 +6,7 @@ import * as Location from "expo-location";
 import Cameracomp from './Cameracomp';
 // import useLocation from './useLocation';
 
-export default function LostPetForm (){
+export default function LostPetForm (props){
     const [animalImage, setAnimalImage] =  useState();
     const [animalName , setAnimalName] = useState();
     const [animalDescription, setAnimalDescription] = useState();
@@ -32,13 +32,15 @@ export default function LostPetForm (){
     }, []);
     
     const handleSendLostPet = () => {
-        axios.post("http://192.168.11.10:3000/lostPetForm", {
-        AnimalImage:animalImage , 
+      const data={
+        AnimalImage:props.imageUri , 
         AnimalName:animalName,
         AnimalDescription:animalDescription,
         latitude : location.latitude,
         longitude : location.longitude
-      })
+      }
+      console.log(data)
+     axios.post("http://192.168.11.10:3000/lostPetForm", data )
       .then(response=>console.log(response.data))
       .catch(err => console.log(err))
     }
