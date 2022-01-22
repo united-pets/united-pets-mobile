@@ -1,10 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {
-  View,
-  Button,
-  TextInput,
-  StyleSheet,
+import { View,Button, TextInput,  StyleSheet,
   TouchableOpacity
 } from 'react-native'
 
@@ -20,46 +16,19 @@ export default class SignUp extends React.Component {
     const { firstName, lastName, email, phoneNumber , password ,adress , imageUrl } = this.state
     
     try {
-
-        const res = await axios
-        .post("http://localhost:3000/signup", {
-          firstName : firstName,
-          lastName:lastName,
-          email:email,
-          phoneNumber:phoneNumber,
-          password:password ,
-          adress:adress,
-          imageUrl:imageUrl
-        })
-    //   // here place your signup logic
-    //   console.log('user successfully signed up!: ')
+        const res = await axios.post("http://192.168.11.139:3000/signup", {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phoneNumber: phoneNumber,
+          password: password,
+          adress: adress,
+          imageUrl: imageUrl,
+        });
     } catch (err) {
       console.log('error signing up: ', err)
     }
   }
-// SingUp=() => {
-//     // alert("email: " + email + " password: " + pass);}
-//     // console.log(firstName, lastName, email, phoneNumber , password ,adress , imageUrl)
-//     console.log(this.state);
-//    axios
-//       .post("http://localhost:3000/signup", {
-//         firstName : this.firstName,
-//         lastName:this.lastName,
-//         email:this.email,
-//         phoneNumber:this.phoneNumber,
-//         password:this.password ,
-//         adress:this.adress,
-//         imageUrl:this.imageUrl
-
-//       })
-    //   .then((response) => {
-    //     console.log("success", response);
-    //   })
-//       .catch((err) => {
-//         throw err;
-//       });
-//   };
-
 
  
   render() {
