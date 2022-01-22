@@ -57,7 +57,7 @@ export default function PetServices({ navigation }) {
             resizeMode="contain"
             style={{ flex: 1 }}
           />
-          <Button title="" onPress={ } />
+          {/* <Button title="" onPress={ } /> */}
         </TouchableOpacity>
       </View>
       <View
@@ -133,7 +133,7 @@ export default function PetServices({ navigation }) {
             resizeMode="contain"
             style={{ flex: 0.6 }}
           />
-          <Button title="join us" onPress={navigateSetting} />
+          {/* <Button title="join us" onPress={navigateSetting} /> */}
         </TouchableOpacity>
       </View>
     </View>

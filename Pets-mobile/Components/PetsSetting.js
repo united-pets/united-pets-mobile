@@ -9,6 +9,8 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+import Communications from "react-native-communications";
+// import { phonecall, email, text, web } from "react-native-communications";
 import { Paragraph } from "react-native-paper";
 export default function PetsSetting({ navigation }) {
   return (
