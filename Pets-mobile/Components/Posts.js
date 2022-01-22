@@ -16,11 +16,13 @@ import MarkedList from '@jsamr/react-native-li';
 import { Avatar, Card, Title, Paragraph } from "react-native-paper";
 import ImagedCardView from "react-native-imaged-card-view";
 export default function Posts() {
+  useEffect(()=>fetchPostsData(),[])
+
   const [posts, setPosts] = useState([]);
   console.log(posts);
   const fetchPostsData = () => {
     axios
-      .get("http://192.168.11.142:3000/getAll")
+      .get("http://192.168.11.139:3000/getAll")
       .then((response) => {
         const posts = response.data;
         setPosts(posts);
@@ -31,12 +33,11 @@ export default function Posts() {
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Lost Pets</Text>
+      {/* <Text style={styles.text}>Lost Pets</Text>
       <Button
         title="get data"
         onPress={fetchPostsData}
-      />
-
+      /> */}
       <View>
         {/* <Text>{posts.map(item => (
                 //   <Image/>
@@ -66,15 +67,15 @@ export default function Posts() {
       </View>
     </View>
   );
-  // useEffect(()=>{fetchPostsData()},[])
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-        marginTop: 100,
-    marginBottom:150
+        marginTop: 0,
+    marginBottom:0,
+    width:'100%'
   },
   mycard: {
     flexDirection: "row",

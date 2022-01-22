@@ -1,14 +1,23 @@
 import React , { useState } from 'react';
-import { Button ,StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+// import { AsyncStorage } from 'react-native';
+
+import { Button ,StyleSheet, Text, View, TextInput, TouchableOpacity , AsyncStorage } from 'react-native';
 import axios from 'axios';
-import AsyncStorage from "@react-native-async-storage/async-storage";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 import { CredentialsContext } from "./CredentialsContext.js";
 // import SyncStorage from 'sync-storage'
 // import AsyncStorage from 'react-native';r
 export default function Login ({navigation}) {
-const NavigateToFoundPet = ()=>{
-  navigation.navigate('buttomTab')
-}
+  const setsession = async (session) => {
+    try{
+
+      console.log('session',session);
+      
+      await AsyncStorage.setItem('session', JSON.stringify(session) )
+    }catch(err){
+      console.log(err);
+    }
+  }
   const navigateTosignUp = ()=> {
     navigation.navigate('signUp')
   }
@@ -29,16 +38,17 @@ const persistLogin = (credentials) => {
 };
   const login = ()=>{
     let data=  { firstName, password }
-    axios.post("http://192.168.11.142:3000/login", data).then(
-      // res=>{
-      // console.log(res)
-      // const data=res.data
+    axios.post("http://192.168.11.139:3000/login", data).then(
+      res=>{
+        navigation.navigate('buttomTab')
+      console.log(res)
+      const data=res.data
+      setsession(data)
       // persistLogin({ userData: data });
-      navigation.navigate('buttomTab')
       // if(localStorage.length!==0){
       // }
       // NavigateToFoundPet()
-    // }
+    }
     ).catch(err=>{
       console.log(err);
     })

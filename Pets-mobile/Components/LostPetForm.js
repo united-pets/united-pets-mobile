@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button ,StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Button ,StyleSheet, Text, View, TextInput, TouchableOpacity , AsyncStorage } from 'react-native';
 import axios from 'axios';
 import { useState , useEffect } from 'react/cjs/react.development';
 import * as Location from "expo-location";
@@ -11,6 +11,14 @@ export default function LostPetForm (props){
     const [animalName , setAnimalName] = useState();
     const [animalDescription, setAnimalDescription] = useState();
     const [location, setLocation] = useState();
+
+    const getid = async (key)=>{
+      const id = await JSON.parse(AsyncStorage.getItem(key))
+      console.log(key);
+      console.log('hahaha');
+      // JSON.parse(localStorage.getItem("session"))
+      return id
+    }
     const getLocation = async () => {
       try {
         const { granted } = await Location.requestForegroundPermissionsAsync();
@@ -25,24 +33,39 @@ export default function LostPetForm (props){
         console.log(error);
       }
     };
-    useEffect(() => {
+    useEffect(async () => {
       getLocation();
       // handleSendLocation();
       // console.log(location);
+      const y =  await AsyncStorage.getItem("session")
+      // console.log('get',y);
     }, []);
     
-    const handleSendLostPet = () => {
-      const data={
-        AnimalImage:props.imageUri , 
-        AnimalName:animalName,
-        AnimalDescription:animalDescription,
-        latitude : location.latitude,
-        longitude : location.longitude
-      }
-      console.log(data)
-     axios.post("http://192.168.11.10:3000/lostPetForm", data )
-      .then(response=>console.log(response.data))
-      .catch(err => console.log(err))
+    const handleSendLostPet = async () => {
+      
+   try{
+    const y =  await AsyncStorage.getItem("session")
+    console.log('getttt', JSON.parse(y)[0].iduser);
+     const data={
+       user_iduser:JSON.parse(y)[0].iduser,
+       AnimalImage:props.imageUri, 
+       AnimalName:animalName,
+       AnimalDescription:animalDescription,
+       latitude : location.latitude,
+       longitude : location.longitude
+     }
+     console.log(data)
+    axios.post("http://192.168.11.139:3000/add", data)
+    //  .then(({data})=>
+      
+    //    console.log(data)
+       // console.log('hihihihihihih')
+      //  )
+    //  .catch(err => console.log(err))
+   }
+   catch(err){
+     console.log(err);
+   }
     }
 
     return(
@@ -96,7 +119,8 @@ style={styles.inputText} >
     <Button 
     title="Send Request "
      onPress={()=>{
-       handleSendLostPet();
+    
+       handleSendLostPet()
      }}
     />
   </TouchableOpacity>
