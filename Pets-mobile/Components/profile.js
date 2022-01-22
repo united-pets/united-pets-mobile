@@ -13,7 +13,7 @@ import {
 import{ Avatar , Title , Caption , Text , TouchableOpacity , TouchableRipple} from 'react-native-paper'
 import  Icon  from "react-native-vector-icons/MaterialCommunityIcons";
 export default function profile({navigation}) {
-  
+
 return(
   <SafeAreaView style={styles.container} >
 
@@ -60,21 +60,21 @@ return(
 </View>
 <View style={styles.menuWrapper}>
  
-  <TouchableRipple style={styles.menuItem} onPress={()=>navigation.navigate('UpdateProfile')}>
+  <TouchableRipple style={styles.menuItem} onPress={()=>{}}>
    <Text style={styles.menuItemText}>
-   <Icon name='heart-outline' color="#FF6347" size={25} />
+   <Icon name='pets' color="#FF6347" size={25} />
      your Pets
    </Text>
   </TouchableRipple>
   <TouchableRipple style={styles.menuItem} onPress={()=>{}}>
    <Text style={styles.menuItemText}>
-   <Icon name='heart-outline' color="#FF6347" size={25} />
+   <Icon name='post-outline' color="#FF6347" size={25} />
      your Posts
    </Text>
   </TouchableRipple>
   <TouchableRipple style={styles.menuItem} onPress={()=>{}}>
    <Text style={styles.menuItemText}>
-   <Icon name='heart-outline' color="#FF6347" size={25} />
+   <Icon name='contacts' color="#FF6347" size={25} />
      contact us
    </Text>
   </TouchableRipple>
