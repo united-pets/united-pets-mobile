@@ -13,10 +13,11 @@ import Home from  '../Components/HomePage'
 import Profile from '../Components/profile'
 import Posts  from '../Components/Posts';
 import LostPetForm from '../Components/LostPetForm';
+import Add from '../Components/picture'
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import  Icon  from "react-native-vector-icons/MaterialCommunityIcons";
-
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -35,34 +36,45 @@ export default function MyTabs() {
       ...StyleSheet.shadow
       }
     }}>
-      <Tab.Screen name={"foundPet"} component={Posts} options={
+      <Tab.Screen name={"foundPet"} component={Home}  options={
         {
+          headerShown: false,
           tabBarIcon:({focused})=>(
             <View>
-              {/* <Image /> */}
-              <Text>home</Text>
+             <FontAwesome5
+                name="home"
+                size={20}
+              ></FontAwesome5>
+           
             </View>
           )
         }
       }/>
-      <Tab.Screen name={"home"} component={Home} 
+      <Tab.Screen name={"home"} component={Posts} 
       options={
         {
+          headerShown: false,
           tabBarIcon:({focused})=>(
             <View>
-              {/* <Image /> */}
-              <Text>lost</Text>
-            </View>
+             <FontAwesome5
+                name="paw"
+                size={20}
+              ></FontAwesome5>
+           </View>
           )
         }
       }/>
-      <Tab.Screen name={"add lost pet"} component={LostPetForm} 
+      <Tab.Screen name={"found"} component={Add}
       options={
         {
+          headerShown: false,
           tabBarIcon:({focused})=>(
             <View>
-              {/* <Image /> */}
-              <Text>add </Text>
+               <FontAwesome5
+                name="plus-square"
+                size={20}
+              ></FontAwesome5>
+           
             </View>
           )
         }
@@ -70,10 +82,14 @@ export default function MyTabs() {
       <Tab.Screen name={"profile"} component={Profile} 
       options={
         {
+          headerShown: false,
           tabBarIcon:({focused})=>(
             <View>
-              {/* <Image /> */}
-              <Text>profile</Text>
+               <FontAwesome5
+                name="user-alt"
+                size={20}
+              ></FontAwesome5>
+         
             </View>
           )
         }
@@ -82,15 +98,15 @@ export default function MyTabs() {
   );
 }
 
-const style =StyleSheet.create({
-shadow:{
-  shadowColor:'#7F5DF0',
-  shadowOffset:{
-    width : 0,
-    height:10,
-  },
-  shodowRadius:3.5,
-  shodowOpacity : 0.25,
-  elevation:5
-}
-})
+// const style =StyleSheet.create({
+// shadow:{
+//   shadowColor:'#7F5DF0',
+//   shadowOffset:{
+//     width : 0,
+//     height:10,
+//   },
+//   shodowRadius:3.5,
+//   shodowOpacity : 0.25,
+//   elevation:5
+// }
+// })

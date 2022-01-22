@@ -9,7 +9,7 @@ import FoundPet from '../Components/FoundPet'
 import Mytabs from './buttomTab'
 import Updateprofile from "../Components/updateProfile";
 const Screens={
-    Home:{
+    home:{
         screen : HomePage
     },
     login:{
